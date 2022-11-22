@@ -5,20 +5,28 @@ import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.effect.ImageInput;
 import javafx.stage.Stage;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import javafx.scene.image.Image;
 
 
 public class EntryPoint extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/LoginPage.fxml"));
         
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
         scene.getRoot().setStyle("-fx-font-family: 'serif'");
 
-        stage.setTitle("JavaFX and Maven");
+        stage.getIcons().add((new Image(getClass().getResourceAsStream("/assets/images/icon-window.png"))));
+
+        stage.setTitle("FeMASS - Bibliotéca Universitaria");
         stage.setScene(scene);
         stage.show();
     }
