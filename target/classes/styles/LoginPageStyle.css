@@ -1,0 +1,36 @@
+.container {
+    -fx-pref-width: 1366px;
+    -fx-pref-height: 768px;
+}
+
+.main-container {
+    -fx-background-color: #3ee3e3;
+}
+
+.form-section {
+    -fx-background-color: white;
+}
+
+.inputs {
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+    -fx-border-color: #A0A0A2;
+    -fx-border-radius: 5px;
+}
+
+.login-button {
+    -fx-background-color: #0C62AD;
+    -fx-text-fill: white;
+    -fx-font-weight: 400;
+    -fx-font-size: 22px;
+    -fx-font-family: 'Poppins', sans-serif;
+}
+
+.login-button:hover {
+    -fx-cursor: hand;
+}
+
+.login-button:pressed {
+    -fx-scale-y: 0.9;
+    -fx-scale-x: 0.9;
+}
