@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -18,19 +15,19 @@
                <children>
                   <HBox alignment="CENTER" layoutX="579.0" layoutY="312.0" prefHeight="100.0" prefWidth="200.0" styleClass="main-container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <VBox prefHeight="778.0" prefWidth="80.0" styleClass="banner-section" HBox.hgrow="ALWAYS">
+                        <VBox prefHeight="778.0" prefWidth="80.0" styleClass="banner-section">
                            <children>
-                              <HBox prefHeight="768.0" prefWidth="709.0">
+                              <HBox prefHeight="768.0" prefWidth="709.0" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <Pane prefHeight="768.0" prefWidth="728.0">
+                                    <AnchorPane prefHeight="769.0" prefWidth="566.0" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <ImageView fitHeight="779.0" fitWidth="677.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="779.0" fitWidth="677.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <image>
                                                 <Image url="@../assets/images/login-page-banner.png" />
                                              </image>
                                           </ImageView>
                                        </children>
-                                    </Pane>
+                                    </AnchorPane>
                                  </children>
                               </HBox>
                            </children>
@@ -45,34 +42,33 @@
                                     <Insets />
                                  </VBox.margin>
                               </ImageView>
-                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="40.0">
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0">
                                  <children>
-                                    <TextField prefHeight="46.0" promptText="Usuário" styleClass="inputs">
+                                    <TextField fx:id="emailInput" prefHeight="46.0" promptText="Email" styleClass="inputs">
                                        <VBox.margin>
-                                          <Insets left="100.0" right="100.0" />
+                                          <Insets />
                                        </VBox.margin>
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </TextField>
-                                    <PasswordField prefHeight="46.0" promptText="Senha" styleClass="inputs">
+                                    <PasswordField fx:id="passwordInput" prefHeight="46.0" promptText="Senha" styleClass="inputs">
                                        <VBox.margin>
-                                          <Insets left="100.0" right="100.0" />
+                                          <Insets />
                                        </VBox.margin>
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </PasswordField>
                                  </children>
+                                 <padding>
+                                    <Insets left="110.0" right="110.0" />
+                                 </padding>
                               </VBox>
-                              <Button maxWidth="128.0" mnemonicParsing="false" prefHeight="49.0" text="Entrar">
+                              <Button fx:id="signInInput" contentDisplay="CENTER" maxWidth="128.0" mnemonicParsing="false" onMouseClicked="#signIn" prefHeight="49.0" styleClass="login-button" text="Entrar">
                                  <font>
                                     <Font size="22.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="login-button" />
-                                    <String fx:value="login-button:hover" />
-                                 </styleClass></Button>
+                                 </font></Button>
                            </children>
                         </VBox>
                      </children>

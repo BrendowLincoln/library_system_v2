@@ -1,34 +1,20 @@
 package br.org.femass;
 
+import br.org.femass.utils.router.Router;
+import br.org.femass.utils.router.RouterService;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.effect.ImageInput;
-import javafx.stage.Stage;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
-import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 
 public class EntryPoint extends Application {
 
+    private final RouterService routerManager = RouterService.getInstance();
+
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/LoginPage.fxml"));
-        
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add("/styles/Styles.css");
-        scene.getRoot().setStyle("-fx-font-family: 'serif'");
-
-        stage.getIcons().add((new Image(getClass().getResourceAsStream("/assets/images/icon-window.png"))));
-
-        stage.setTitle("FeMASS - Bibliotéca Universitaria");
-        stage.setScene(scene);
-        stage.show();
+        routerManager.navigateTo(Router.LOGIN_PAGE, stage);
     }
 
     /**

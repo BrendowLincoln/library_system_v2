@@ -1,24 +1,26 @@
 package br.org.femass.models;
 
-import br.org.femass.utils.Role;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Employee {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String userNickname;
-    private String password;
-    private Role role;
+    @OneToOne(cascade = CascadeType.ALL)
+    private User user;
 
-    public Employee() {
+    public Employee() { }
 
+    public Employee(String name, User user) {
+        this.name = name;
+        this.user = user;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + this.name + " (" + this.user.getRole() + ")";
     }
 }

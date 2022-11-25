@@ -1,0 +1,47 @@
+
+.application-container {
+    -fx-pref-width: 1366px;
+    -fx-pref-height: 768px;
+    -fx-background-color: purple;
+}
+
+.side-nav {
+    -fx-pref-width: 348px;
+    -fx-pref-height: 768px;
+    -fx-background-color: #F5F4F7;
+}
+
+.main-container {
+    -fx-pref-width: 1018px;
+    -fx-pref-height: 768px;
+    -fx-background-color: #FFFFFF;
+
+}
+
+.main-content {
+    -fx-padding: 30px 0 30px 0;
+}
+
+.header-section {
+    -fx-padding: 27px;
+}
+
+.title-header-container {
+    -fx-alignment: center-left;
+}
+
+.title-header {
+    -fx-font-size: 32px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #5B5B5B;
+    -fx-alignment: center-left;
+}
+
+.logo-header-container {
+    -fx-alignment: center-right;
+}
+
+.logo-header {
+    -fx-fit-to-width: 83px;
+    -fx-fit-to-height: 83px;
+}

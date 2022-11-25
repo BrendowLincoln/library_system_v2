@@ -1,4 +1,4 @@
-package br.org.femass.utils;
+package br.org.femass.utils.enums;
 
 public enum Role {
     ADMIN("Administrador"),
