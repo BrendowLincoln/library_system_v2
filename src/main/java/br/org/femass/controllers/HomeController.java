@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ApplicationController extends ControllerBase implements Initializable {
+public class HomeController extends ControllerBase implements Initializable {
 
     private final RouterService routerService = RouterService.getInstance();
     private Employee user;
