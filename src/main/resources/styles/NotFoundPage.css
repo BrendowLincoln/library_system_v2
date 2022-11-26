@@ -1,0 +1,35 @@
+.container-page {
+    -fx-pref-width: 1366px;
+    -fx-pref-height: 768px;
+    -fx-background-color: #FFFFFF;
+}
+
+
+.image-page {
+    -fx-fit-to-width: 750px;
+    -fx-fit-to-height: 499px;
+    -fx-pref-width: 750px;
+    -fx-pref-height: 499px;
+    -fx-min-width: 750px;
+    -fx-min-height: 499px;
+}
+.title-page {
+    -fx-font-weight: 400;
+    -fx-text-fill: #0C62AD;
+    -fx-wrap-text: true;
+    -fx-font-size: 40px;
+    -fx-font-family: 'Poppins', sans-serif;
+}
+
+.back-to-home-button {
+    -fx-background-color: #0C62AD;
+    -fx-text-fill: white;
+    -fx-font-weight: 400;
+    -fx-font-size: 16px;
+    -fx-font-family: 'Poppins', sans-serif;
+}
+
+
+.back-to-home-button:hover {
+    -fx-cursor: hand;
+}

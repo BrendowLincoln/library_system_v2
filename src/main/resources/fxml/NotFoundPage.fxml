@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="container-page" stylesheets="@../styles/NotFoundPage.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.NotFoundPage">
+   <children>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label styleClass="title-page" text="Parece que a página não está aqui" />
+            <ImageView fitHeight="499.0" fitWidth="750.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/undraw_Page_not_found_re_e9o6.png" />
+               </image>
+               <styleClass>
+                  <String fx:value="image-page" />
+                  <String fx:value="image-page" />
+               </styleClass>
+            </ImageView>
+            <Button fx:id="backToHomeButton" mnemonicParsing="false" onMouseClicked="#backToHomePage" styleClass="back-to-home-button" text="Voltar para o início" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
