@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="card-container" stylesheets="@../../styles/shared/components/SmallCardListItemStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.components.SmallCardListItemController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="3.0" styleClass="book-image-card" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+               <children>
+                  <ImageView fx:id="bookImage" pickOnBounds="true" preserveRatio="true" styleClass="count-extra-books">
+                     <image>
+                        <Image url="@../../assets/images/book-not-found-squared-image.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox prefHeight="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox prefHeight="0.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="readerLoanLabel" styleClass="reader-label" text="Leitor" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="readerRoleLoanLabel" styleClass="role-label" text="Função" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" styleClass="loan-status-badge">
+                                 <children>
+                                    <Label fx:id="statusLoanBadge" styleClass="loan-status-badge-label" text="Emprestado" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="25.0" prefHeight="0.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="loan-info-title-container">
+                           <children>
+                              <Label styleClass="loan-info-title" text="Empréstimo" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="loan-info-data-container" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="loanDataLabel" styleClass="loan-info-data" text="Data" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="47.0" prefHeight="0.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="loan-info-title-container">
+                           <children>
+                              <Label styleClass="loan-info-title" text="Previsão de devolução" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="loan-info-data-container" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="returnForecastDataLabel" styleClass="loan-info-data" text="Data" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="64.0" prefHeight="0.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="loan-info-title-container">
+                           <children>
+                              <Label styleClass="loan-info-title" text="Devolução" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="loan-info-data-container" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="returnDataLabel" styleClass="loan-info-data" text="Data" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="81.0" prefHeight="0.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="0.0" prefWidth="0.0" styleClass="loan-info-title-container">
+                           <children>
+                              <Label styleClass="loan-info-title" text="N. de livros emprestados" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="loan-info-data-container" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="numberOfBooksLabel" styleClass="loan-info-data" text="Data" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

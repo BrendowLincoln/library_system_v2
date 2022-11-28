@@ -1,0 +1,74 @@
+.card-container {
+    -fx-pref-width: 256px;
+    -fx-pref-height: 141px;
+    -fx-background-radius: 10px;
+    -fx-background-color: #E6E9F1;
+    -fx-padding: 10px 0 10px 0;
+    -fx-cursor: hand;
+    -fx-end-margin: 10px;
+}
+
+.book-image-card {
+    -fx-pref-width: 75px;
+    -fx-pref-height: 117px;
+    -fx-fit-to-width: 75px;
+    -fx-fit-to-height:  117px;
+    -fx-alignment: center-left;
+    -fx-padding: 0 10px 0 10px;
+}
+
+.reader-label {
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #0C62AD;
+    -fx-font-family: 'Tahome', sans-serif;
+}
+
+.role-loan-status-container {
+    margin: 10px 1px0 10px 10px;
+}
+
+.role-label {
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #999999;
+    -fx-font-family: 'Tahome', sans-serif;
+}
+
+.loan-status-badge {
+    -fx-pref-width: 56px;
+    -fx-pref-height: 12px;
+    -fx-background-radius: 2px;
+    -fx-background-color: #ffffff;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 0);
+}
+
+.loan-status-badge-label {
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #0C62AD;
+    -fx-font-family: 'Tahome', sans-serif;
+}
+
+.loan-info-title-container {
+    -fx-pref-width: 100px;
+}
+
+.loan-info-title {
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #5686AF;
+    -fx-font-family: 'Tahome', sans-serif;
+}
+
+.loan-info-data-container {
+    -fx-pref-width: 42px;
+}
+
+.loan-info-data {
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #999999;
+    -fx-font-family: 'Tahome', sans-serif;
+}

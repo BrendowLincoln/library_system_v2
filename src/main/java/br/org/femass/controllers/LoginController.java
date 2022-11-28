@@ -46,7 +46,7 @@ public class LoginController extends ControllerBase implements Initializable {
         }
 
         UserProvider.setUserData(employeeUser);
-        routerService.navigateTo(Router.APPLICATION_PAGE, stage);
+        routerService.navigateTo(Router.HOME_PAGE, stage);
     }
 
 

@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1366.0" styleClass="application-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.HomeController">
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" styleClass="application-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.AuthorsController">
    <children>
       <HBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -39,17 +39,12 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
                            <children>
-                              <Button fx:id="homeButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#homePage" text="Início" HBox.hgrow="ALWAYS">
-                                 <styleClass>
-                                    <String fx:value="side-nav-button" />
-                                    <String fx:value="side-nav-button-selected" />
-                                 </styleClass>
-                              </Button>
+                              <Button fx:id="homeButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#homePage" styleClass="side-nav-button" text="Início" HBox.hgrow="ALWAYS" />
                               <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                                  <children>
                                     <ImageView pickOnBounds="true" preserveRatio="true" styleClass="side-nav-button-icon">
                                        <image>
-                                          <Image url="@../assets/images/arrow-blue-icon.png" />
+                                          <Image url="@../assets/images/arrow-gray-icon.png" />
                                        </image>
                                     </ImageView>
                                  </children>
@@ -72,12 +67,16 @@
                         </HBox>
                         <HBox layoutX="10.0" layoutY="169.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
                            <children>
-                              <Button fx:id="authorsButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#authorsPage" styleClass="side-nav-button" text="Autores" HBox.hgrow="ALWAYS" />
+                              <Button fx:id="authorsButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#authorsPage" text="Autores" HBox.hgrow="ALWAYS">
+                                 <styleClass>
+                                    <String fx:value="side-nav-button" />
+                                    <String fx:value="side-nav-button-selected" />
+                                 </styleClass></Button>
                               <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                                  <children>
                                     <ImageView pickOnBounds="true" preserveRatio="true" styleClass="side-nav-button-icon">
                                        <image>
-                                          <Image url="@../assets/images/arrow-gray-icon.png" />
+                                          <Image url="@../assets/images/arrow-blue-icon.png" />
                                        </image>
                                     </ImageView>
                                  </children>
@@ -155,7 +154,7 @@
                            <children>
                               <HBox prefHeight="83.0" prefWidth="200.0" styleClass="title-header-container" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <Label styleClass="title-header" text="Início" />
+                                    <Label styleClass="title-header" text="Autores" />
                                  </children>
                               </HBox>
                               <HBox fillHeight="false" prefHeight="83.0" prefWidth="200.0" styleClass="logo-header-container" HBox.hgrow="ALWAYS">
@@ -169,60 +168,7 @@
                               </HBox>
                            </children>
                         </HBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0" styleClass="search-section-container">
-                           <children>
-                              <Label styleClass="search-content-title" text="Bem vindo(a) ao sistema de gerênciamento da biblioteca FeMASS">
-                                 <font>
-                                    <Font name="Tahoma" size="12.0" />
-                                 </font>
-                              </Label>
-                              <HBox alignment="CENTER" fillHeight="false" prefHeight="170.0" prefWidth="992.0" VBox.vgrow="NEVER">
-                                 <children>
-                                    <AnchorPane minHeight="0.0" prefHeight="66.0" prefWidth="850.0" styleClass="search-input-container">
-                                       <children>
-                                          <TextField fx:id="searchInput" layoutX="81.0" layoutY="53.0" onKeyPressed="#searchBookKeyPressed" prefWidth="0.0" promptText="Busque aqui o livro que deseja..." styleClass="search-input" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <font>
-                                                <Font name="Tahoma" size="16.0" />
-                                             </font>
-                                          </TextField>
-                                          <Button fx:id="searchButton" layoutX="833.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#searchBookClick" prefHeight="0.0" styleClass="search-input-button" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <graphic>
-                                                <ImageView pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../assets/images/search-blue-icon.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                          </Button>
-                                       </children>
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                       <opaqueInsets>
-                                          <Insets />
-                                       </opaqueInsets>
-                                    </AnchorPane>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0" styleClass="last-loans-section-container">
-                           <children>
-                              <Label styleClass="last-loans-title" text="Ultimos empréstimos">
-                                 <font>
-                                    <Font name="Tahoma" size="12.0" />
-                                 </font>
-                              </Label>
-                              <HBox fx:id="cardGroup" prefHeight="100.0" prefWidth="200.0" styleClass="last-loans-group-card">
-                                 <children>
-                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
-                                       <children>
-                                          <Label styleClass="last-loans-group-empty-message" text="Sem empréstimos recentes" />
-                                       </children>
-                                    </HBox>
-                                 </children></HBox>
-                           </children>
-                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
                      </children>
                   </VBox>
                </children>

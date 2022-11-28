@@ -18,15 +18,15 @@
     -fx-text-fill: #0C62AD;
     -fx-wrap-text: true;
     -fx-font-size: 40px;
-    -fx-font-family: 'Poppins', sans-serif;
-}
+    -fx-font-family: 'Tahome', sans-serif;
+    }
 
 .back-to-home-button {
     -fx-background-color: #0C62AD;
     -fx-text-fill: white;
     -fx-font-weight: 400;
     -fx-font-size: 16px;
-    -fx-font-family: 'Poppins', sans-serif;
+    -fx-font-family: 'Tahome', sans-serif;
 }
 
 

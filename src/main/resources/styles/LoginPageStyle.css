@@ -29,22 +29,17 @@
     -fx-text-fill: white;
     -fx-font-weight: 400;
     -fx-font-size: 22px;
-    -fx-font-family: 'Poppins', sans-serif;
+    -fx-font-family: 'Tahome', sans-serif;
 }
 
 .login-button:hover {
     -fx-cursor: hand;
 }
 
-.login-button:pressed {
-    -fx-scale-y: 0.9;
-    -fx-scale-x: 0.9;
-}
-
 .signup-button {
     -fx-background-color: transparent;
     -fx-text-fill: #0C62AD;
-    -fx-font-family: 'Poppins', sans-serif;
+    -fx-font-family: 'Tahome', sans-serif;
     -fx-font-size: 16;
     -fx-font-weight: 400;
     -fx-cursor: hand;

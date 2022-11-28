@@ -32,6 +32,11 @@ public class RouterService {
 
         URL location = getClass().getResource(router);
 
+        if(location == null) {
+            navigateTo(Router.NOT_FOUND_PAGE, stage);
+            return;
+        }
+
         loader.setLocation(location);
         loader.setBuilderFactory(new JavaFXBuilderFactory());
 

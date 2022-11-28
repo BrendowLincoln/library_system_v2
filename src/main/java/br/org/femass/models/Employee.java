@@ -19,6 +19,18 @@ public class Employee {
 
     }
 
+    public Long getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public User getUser() {
+        return this.user;
+    }
+
     @Override
     public String toString() {
         return "Name: " + this.name + " (" + this.user.getRole() + ")";
