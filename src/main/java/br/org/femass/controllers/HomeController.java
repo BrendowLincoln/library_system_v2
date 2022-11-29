@@ -16,7 +16,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class HomeController extends ControllerBase implements Initializable {
@@ -33,6 +36,8 @@ public class HomeController extends ControllerBase implements Initializable {
 
         try {
 
+            List<Object> loansList = new ArrayList<>();
+
             Button seeMoreButton = new Button();
             seeMoreButton.setText("Ver mais >");
             seeMoreButton.getStyleClass().add("see-more-button");
@@ -45,7 +50,7 @@ public class HomeController extends ControllerBase implements Initializable {
                 }
             });
 
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < loansList.size(); i++) {
 
                 if(i == 0) {
                     cardGroup.getChildren().remove(0);

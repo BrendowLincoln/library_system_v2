@@ -14,6 +14,7 @@ public class EntryPoint extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        stage.centerOnScreen();
         routerManager.navigateTo(Router.LOGIN_PAGE, stage);
     }
 

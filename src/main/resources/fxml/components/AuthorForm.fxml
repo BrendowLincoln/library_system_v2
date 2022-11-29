@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="form-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.components.AuthorFormController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="header-container" stylesheets="@../../styles/shared/DialogStyle.css">
+               <children>
+                  <Label fx:id="headerTitle" styleClass="header-title" text="Titulo" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fx:id="closeButton" onMouseClicked="#closeDialog" pickOnBounds="true" preserveRatio="true" styleClass="header-close-button">
+                           <image>
+                              <Image url="@../../assets/images/close-white-icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="main-container" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Código" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container">
+                           <children>
+                              <TextField fx:id="codeInput">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-code-input" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="60.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Nome" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="nameInput">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-name-input" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="111.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Sobrenome" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="secondNameInput">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-second-name-input" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="162.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Nacionalidade" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="nationalityInput">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-nationality-input" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="bottom-container">
+               <children>
+                  <Button fx:id="cancelButton" mnemonicParsing="false" onMouseClicked="#cancel" styleClass="cancel-button-bottom" text="Cancelar" />
+                  <Button fx:id="saveButton" mnemonicParsing="false" onMouseClicked="#save" styleClass="save-button-bottom" text="Salvar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../../styles/shared/DialogStyle.css" />
+      <URL value="@../../styles/shared/components/AuthorFormStyle.css" />
+   </stylesheets>
+</AnchorPane>

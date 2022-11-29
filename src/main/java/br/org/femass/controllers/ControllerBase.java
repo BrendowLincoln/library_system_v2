@@ -86,10 +86,9 @@ public class ControllerBase {
     private void configureStage(Stage stage) {
 
         stage.getIcons().add((new Image(getClass().getResourceAsStream("/assets/images/icon-window.png"))));
-        stage.setTitle("FeMASS - Bibliotéca Universitaria");
+        stage.setTitle("FeMASS - Biblioteca Universitaria");
         stage.setWidth(1366);
         stage.setHeight(768);
-        stage.centerOnScreen();
         stage.setResizable(false);
     }
 

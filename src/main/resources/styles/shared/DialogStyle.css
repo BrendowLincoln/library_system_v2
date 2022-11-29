@@ -1,0 +1,45 @@
+.header-container {
+    -fx-background-color: #5686AF;
+    -fx-padding: 0px 17px 0px 17px;
+    -fx-pref-height: 40px;
+    -fx-alignment: center-left;
+}
+
+.header-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: 700;
+    -fx-font-family: 'Tahome', sans-serif;
+    -fx-text-fill: #FFFFFF;
+}
+
+.header-close-button {
+    -fx-cursor: hand;
+}
+
+.bottom-container {
+    -fx-background-color: #F1F0F0;
+    -fx-pref-height: 70px;
+    -fx-padding: 0 17px 0 17px;
+    -fx-alignment: center-right;
+    -fx-spacing: 19px;
+}
+
+.cancel-button-bottom,
+.save-button-bottom {
+    -fx-font-size: 16px;
+    -fx-font-weight: 400;
+    -fx-font-family: 'Tahome', sans-serif;
+    -fx-pref-height: 30px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.cancel-button-bottom {
+    -fx-background-color: #E2E2E2;
+    -fx-text-fill: #999999;
+}
+
+.save-button-bottom {
+    -fx-background-color: #5686AF;
+    -fx-text-fill: #FFFFFF;
+}

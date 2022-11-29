@@ -168,7 +168,49 @@
                               </HBox>
                            </children>
                         </HBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                        <HBox alignment="CENTER" fillHeight="false" prefHeight="170.0" prefWidth="992.0" styleClass="search-section-container">
+                           <children>
+                              <AnchorPane minHeight="0.0" prefHeight="66.0" prefWidth="850.0" styleClass="search-input-container">
+                                 <children>
+                                    <TextField fx:id="searchInput" layoutX="81.0" layoutY="53.0" onKeyPressed="#searchBookKeyPressed" prefWidth="0.0" promptText="Busque o autor que deseja" styleClass="search-input" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma" size="16.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button fx:id="searchButton" layoutX="761.0" mnemonicParsing="false" onMouseClicked="#searchBookClick" prefHeight="0.0" styleClass="search-input-button" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="1.0">
+                                       <graphic>
+                                          <ImageView pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/images/search-light-blue-icon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </AnchorPane>
+                              <Button fx:id="addButton" graphicTextGap="18.0" mnemonicParsing="false" onMouseClicked="#add" styleClass="add-button" text="Adicionar">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/images/add-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="26.0" />
+                           </VBox.margin>
+                        </HBox>
                      </children>
                   </VBox>
                </children>
@@ -177,7 +219,7 @@
       </HBox>
    </children>
    <stylesheets>
-      <URL value="@../styles/HomePageStyle.css" />
       <URL value="@../styles/shared/GlobalStyle.css" />
+      <URL value="@../styles/AuthorsPageStyle.css" />
    </stylesheets>
 </AnchorPane>
