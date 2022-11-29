@@ -38,7 +38,7 @@ public class LoginController extends ControllerBase implements Initializable {
 
     public void signIn(MouseEvent mouseEvent) throws IOException {
 
-        Employee employeeUser = dao.validateUser(emailInput.getText(), passwordInput.getText());
+        Employee employeeUser = dao.getEmployeeByUserVerification(emailInput.getText(), passwordInput.getText());
 
         if(employeeUser == null) {
             JOptionPane.showMessageDialog(null, "Usuário não encontrado");

@@ -1,4 +1,4 @@
-package br.org.femass.controllers.components;
+package br.org.femass.controllers.components.cards;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

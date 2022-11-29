@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import javafx.scene.image.*?>
@@ -92,12 +93,12 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container" HBox.hgrow="ALWAYS">
                            <children>
-                              <TextField fx:id="nationalityInput">
+                              <ComboBox fx:id="nationalityOption" prefWidth="150.0">
                                  <styleClass>
-                                    <String fx:value="form-input" />
                                     <String fx:value="form-nationality-input" />
+                                    <String fx:value="form-input" />
                                  </styleClass>
-                              </TextField>
+                              </ComboBox>
                            </children>
                         </HBox>
                      </children>
@@ -117,4 +118,7 @@
       <URL value="@../../styles/shared/DialogStyle.css" />
       <URL value="@../../styles/shared/components/AuthorFormStyle.css" />
    </stylesheets>
+   <opaqueInsets>
+      <Insets top="20.0" />
+   </opaqueInsets>
 </AnchorPane>

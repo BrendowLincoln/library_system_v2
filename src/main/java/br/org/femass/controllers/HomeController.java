@@ -1,6 +1,6 @@
 package br.org.femass.controllers;
 
-import br.org.femass.controllers.components.SmallCardListItemController;
+import br.org.femass.controllers.components.cards.SmallCardListItemController;
 import br.org.femass.utils.router.Router;
 import br.org.femass.utils.shared.DataProvider;
 import javafx.fxml.FXML;
@@ -16,7 +16,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +57,7 @@ public class HomeController extends ControllerBase implements Initializable {
 
                 FXMLLoader loader = new FXMLLoader();
 
-                URL location = getClass().getResource("/fxml/components/SmallCardListItem.fxml");
+                URL location = getClass().getResource("/fxml/components/cards/SmallCardListItem.fxml");
                 loader.setLocation(location);
                 loader.setBuilderFactory(new JavaFXBuilderFactory());
                 Node lastEmployeeCard= loader.load(location.openStream());

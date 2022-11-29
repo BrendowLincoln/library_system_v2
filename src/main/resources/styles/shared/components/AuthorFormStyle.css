@@ -1,12 +1,15 @@
 .form-container {
     -fx-pref-width: 700px;
     -fx-pref-height: 500px;
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: transparent !important;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 20, 0, 0, 0);
 }
 
 .main-container {
     -fx-padding: 50px 17px 0 17px;
     -fx-spacing: 21px;
+    -fx-background-color: #FFFFFF;
 }
 
 .form-label-input-container {
@@ -34,7 +37,7 @@
     -fx-pref-height: 30px;
     -fx-background-color: #FFFFFF;
     -fx-text-fill: #808EA7;
-    -fx-border-color: rgba(160, 160, 162, 0.2);
+    -fx-border-color: rgba(160, 160, 162, 0.8);
     -fx-border-radius: 5px;
     -fx-background-position: right center;
     -fx-font-size: 12px;

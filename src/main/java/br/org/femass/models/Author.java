@@ -16,9 +16,9 @@ public class Author {
 
     public Author() { }
 
-    public Author(String name, String passwrord, Nationality nationality) {
+    public Author(String name, String secondName, Nationality nationality) {
         this.name = name;
-        this.secondName = name;
+        this.secondName = secondName;
         this.nationality = nationality;
     }
 
@@ -36,5 +36,11 @@ public class Author {
 
     public Nationality getNationality() {
         return nationality;
+    }
+
+
+    @Override
+    public String toString() {
+        return this.name + " " + this.secondName;
     }
 }

@@ -211,6 +211,19 @@
                               <Insets top="26.0" />
                            </VBox.margin>
                         </HBox>
+                        <VBox fillWidth="false" prefHeight="590.0" prefWidth="1018.0" styleClass="list-card-container">
+                           <children>
+                              <ScrollPane fx:id="scrollContainer" pannable="true" prefHeight="567.0" prefWidth="1096.0" styleClass="list-card-scroll" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <VBox fx:id="cardList" prefHeight="541.0" prefWidth="955.0" styleClass="list-card">
+                                       <children>
+                                          <Label styleClass="authors-group-empty-message" text="Sem autores cadastrados" />
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
                      </children>
                   </VBox>
                </children>

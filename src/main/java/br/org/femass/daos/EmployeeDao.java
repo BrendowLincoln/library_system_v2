@@ -12,7 +12,7 @@ public class EmployeeDao extends Dao <Employee> {
     }
 
 
-    public Employee validateUser(String email, String password) {
+    public Employee getEmployeeByUserVerification(String email, String password) {
         var query = em.createQuery(EmployeeQueries.GET_EMPLOYEE_BY_USER_ACCOUNT);
 
         query.setParameter("email", email);
