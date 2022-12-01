@@ -25,7 +25,8 @@
 }
 
 .cancel-button-bottom,
-.save-button-bottom {
+.save-button-bottom,
+.delete-button-bottom {
     -fx-font-size: 16px;
     -fx-font-weight: 400;
     -fx-font-family: 'Tahome', sans-serif;
@@ -41,5 +42,10 @@
 
 .save-button-bottom {
     -fx-background-color: #5686AF;
+    -fx-text-fill: #FFFFFF;
+}
+
+.delete-button-bottom {
+    -fx-background-color: #AF5656;
     -fx-text-fill: #FFFFFF;
 }

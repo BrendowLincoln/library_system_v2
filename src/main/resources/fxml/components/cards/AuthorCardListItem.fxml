@@ -2,63 +2,31 @@
 
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="card-container" stylesheets="@../../../styles/shared/components/cards/AuthorCardListItemStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.components.cards.AuthorCardListItemController">
+<AnchorPane fx:id="cardContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"  prefHeight="400.0" prefWidth="600.0" styleClass="card-container" stylesheets="@../../../styles/shared/components/cards/AuthorCardListItemStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.components.cards.AuthorCardListItemController">
    <children>
-      <HBox prefHeight="100.0" prefWidth="200.0" spacing="3.0" styleClass="book-image-card" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0" spacing="3.0" styleClass="align-card-container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" />
-            <VBox prefHeight="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+            <HBox fillHeight="false" prefHeight="72.0" prefWidth="200.0" styleClass="id-badge">
                <children>
-                  <HBox prefHeight="0.0" prefWidth="200.0" />
-                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="200.0">
-                     <children>
-                        <HBox prefHeight="100.0" prefWidth="200.0" />
-                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
-                           <children>
-                              <HBox prefHeight="100.0" prefWidth="200.0" styleClass="loan-status-badge" />
-                           </children>
-                        </HBox>
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="25.0" prefHeight="0.0" prefWidth="200.0">
-                     <children>
-                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="loan-info-title-container" />
-                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="loan-info-data-container" HBox.hgrow="ALWAYS" />
-                     </children>
-                     <padding>
-                        <Insets bottom="5.0" />
-                     </padding>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="47.0" prefHeight="0.0" prefWidth="200.0">
-                     <children>
-                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="loan-info-title-container" />
-                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="loan-info-data-container" HBox.hgrow="ALWAYS" />
-                     </children>
-                     <padding>
-                        <Insets bottom="5.0" />
-                     </padding>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="64.0" prefHeight="0.0" prefWidth="200.0">
-                     <padding>
-                        <Insets bottom="5.0" />
-                     </padding>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="81.0" prefHeight="0.0" prefWidth="200.0">
-                     <children>
-                        <HBox prefHeight="0.0" prefWidth="0.0" styleClass="loan-info-title-container" />
-                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="loan-info-data-container" HBox.hgrow="ALWAYS" />
-                     </children>
-                     <padding>
-                        <Insets bottom="5.0" />
-                     </padding>
-                  </HBox>
+                  <Label fx:id="idLabel" styleClass="id-label-badge" text="0" />
+               </children>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="author-info-container" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="authorNameLabel" styleClass="author-name-label" text="#name" />
+                  <Label fx:id="authorNationalityLabel" styleClass="author-nationality-label" text="#nationality" />
+               </children>
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="registered-books-container">
+               <children>
+                  <Label fx:id="registeredBooksCountLabel" styleClass="register-books-count" text="0" />
+                  <Label styleClass="registered-books-label" text="Livros cadastrados" />
                </children>
             </VBox>
          </children>

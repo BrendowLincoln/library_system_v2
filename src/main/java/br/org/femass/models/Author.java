@@ -9,15 +9,16 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String firstName;
     private String secondName;
     @Enumerated(EnumType.ORDINAL)
     private Nationality nationality;
 
     public Author() { }
 
-    public Author(String name, String secondName, Nationality nationality) {
-        this.name = name;
+    public Author(Long id, String firstName, String secondName, Nationality nationality) {
+        this.id = id;
+        this.firstName = firstName;
         this.secondName = secondName;
         this.nationality = nationality;
     }
@@ -26,8 +27,8 @@ public class Author {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
     public String getSecondName() {
@@ -41,6 +42,6 @@ public class Author {
 
     @Override
     public String toString() {
-        return this.name + " " + this.secondName;
+        return this.firstName + " " + this.secondName;
     }
 }

@@ -172,7 +172,7 @@
                            <children>
                               <AnchorPane minHeight="0.0" prefHeight="66.0" prefWidth="850.0" styleClass="search-input-container">
                                  <children>
-                                    <TextField fx:id="searchInput" layoutX="81.0" layoutY="53.0" onKeyPressed="#searchBookKeyPressed" prefWidth="0.0" promptText="Busque o autor que deseja" styleClass="search-input" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+                                    <TextField fx:id="searchInput" layoutX="81.0" layoutY="53.0" onKeyPressed="#searchKeyPressed" prefWidth="0.0" promptText="Busque o autor que deseja" styleClass="search-input" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
                                        <font>
                                           <Font name="Tahoma" size="16.0" />
                                        </font>
@@ -213,11 +213,11 @@
                         </HBox>
                         <VBox fillWidth="false" prefHeight="590.0" prefWidth="1018.0" styleClass="list-card-container">
                            <children>
-                              <ScrollPane fx:id="scrollContainer" pannable="true" prefHeight="567.0" prefWidth="1096.0" styleClass="list-card-scroll" VBox.vgrow="ALWAYS">
+                              <ScrollPane fx:id="scrollContainer" pannable="true" prefHeight="503.0" prefWidth="979.0" styleClass="list-card-scroll" VBox.vgrow="ALWAYS">
                                  <content>
-                                    <VBox fx:id="cardList" prefHeight="541.0" prefWidth="955.0" styleClass="list-card">
+                                    <VBox fx:id="cardList" alignment="CENTER" prefHeight="540.0" prefWidth="969.0" styleClass="list-card">
                                        <children>
-                                          <Label styleClass="authors-group-empty-message" text="Sem autores cadastrados" />
+                                          <Label styleClass="authors-group-empty-message" text="Nenhum autor encontradod" />
                                        </children>
                                     </VBox>
                                  </content>

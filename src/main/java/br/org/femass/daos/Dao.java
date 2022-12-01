@@ -30,7 +30,7 @@ public class Dao<E> {
 
     public void delete(E entidade) {
         em.getTransaction().begin();
-        em.remove(entidade);
+        em.remove(em.contains(entidade) ? entidade : em.merge(entidade));
         em.getTransaction().commit();
     }
 

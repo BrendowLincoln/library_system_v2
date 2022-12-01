@@ -3,72 +3,71 @@
     -fx-pref-height: 115px;
     -fx-background-radius: 10px;
     -fx-background-color: #E6E9F1;
-    -fx-padding: 10px 0 10px 0;
+    -fx-padding: 0 18px 0 18px;
     -fx-cursor: hand;
     -fx-end-margin: 10px;
 }
 
-.book-image-card {
-    -fx-pref-width: 75px;
-    -fx-pref-height: 117px;
-    -fx-fit-to-width: 75px;
-    -fx-fit-to-height:  117px;
+.align-card-container {
     -fx-alignment: center-left;
-    -fx-padding: 0 10px 0 10px;
 }
 
-.reader-label {
-    -fx-font-size: 10px;
-    -fx-font-weight: 700;
-    -fx-text-fill: #0C62AD;
-    -fx-font-family: 'Tahome', sans-serif;
-}
-
-.role-loan-status-container {
-    margin: 10px 1px0 10px 10px;
-}
-
-.role-label {
-    -fx-font-size: 8px;
-    -fx-font-weight: 700;
-    -fx-text-fill: #999999;
-    -fx-font-family: 'Tahome', sans-serif;
-}
-
-.loan-status-badge {
-    -fx-pref-width: 56px;
-    -fx-pref-height: 12px;
+.id-badge {
+    -fx-pref-width: 40px;
+    -fx-pref-height: 20px;
     -fx-background-radius: 2px;
     -fx-background-color: #ffffff;
     -fx-alignment: center;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 0);
 }
 
-.loan-status-badge-label {
-    -fx-font-size: 8px;
+
+.id-label-badge {
     -fx-font-weight: 700;
     -fx-text-fill: #0C62AD;
+    -fx-font-size: 12px;
     -fx-font-family: 'Tahome', sans-serif;
 }
 
-.loan-info-title-container {
-    -fx-pref-width: 100px;
+
+.author-info-container {
+    -fx-alignment: center-left;
+    -fx-spacing: 4px;
+
 }
 
-.loan-info-title {
-    -fx-font-size: 8px;
+.author-name-label {
     -fx-font-weight: 700;
-    -fx-text-fill: #5686AF;
+    -fx-text-fill: #0C62AD;
+    -fx-font-size: 18px;
     -fx-font-family: 'Tahome', sans-serif;
 }
 
-.loan-info-data-container {
-    -fx-pref-width: 42px;
-}
-
-.loan-info-data {
-    -fx-font-size: 8px;
-    -fx-font-weight: 700;
+.author-nationality-label {
+    -fx-font-weight: 400;
     -fx-text-fill: #999999;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Tahome', sans-serif;
+}
+
+.registered-books-container {
+    -fx-alignment: center;
+    -fx-pref-width: 84px;
+    -fx-spacing: 1;
+}
+
+.register-books-count {
+    -fx-font-weight: 400;
+    -fx-text-fill: #0C62AD;
+    -fx-font-size: 30px;
+    -fx-font-family: 'Tahome', sans-serif;
+}
+
+.registered-books-label {
+    -fx-font-weight: 400;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-text-fill: #5B5B5B;
+    -fx-font-size: 14px;
     -fx-font-family: 'Tahome', sans-serif;
 }

@@ -107,6 +107,11 @@
             </VBox>
             <HBox prefHeight="100.0" prefWidth="200.0" styleClass="bottom-container">
                <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onMouseClicked="#delete" styleClass="delete-button-bottom" text="Excluir" />
+                     </children>
+                  </HBox>
                   <Button fx:id="cancelButton" mnemonicParsing="false" onMouseClicked="#cancel" styleClass="cancel-button-bottom" text="Cancelar" />
                   <Button fx:id="saveButton" mnemonicParsing="false" onMouseClicked="#save" styleClass="save-button-bottom" text="Salvar" />
                </children>

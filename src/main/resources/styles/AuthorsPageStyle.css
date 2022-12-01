@@ -113,11 +113,11 @@
     -fx-opacity: 1;
     -fx-border-insets: 0;
     -fx-background-color: transparent;
+    -fx-vbar-policy: never;
 }
 
 .list-card {
     -fx-background-color: #ffffff;
-    -fx-alignment: center;
     -fx-spacing: 15px;
 }
 
