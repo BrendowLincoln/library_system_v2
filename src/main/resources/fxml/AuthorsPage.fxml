@@ -217,7 +217,7 @@
                                  <content>
                                     <VBox fx:id="cardList" alignment="CENTER" prefHeight="540.0" prefWidth="969.0" styleClass="list-card">
                                        <children>
-                                          <Label styleClass="authors-group-empty-message" text="Nenhum autor encontradod" />
+                                          <Label styleClass="authors-group-empty-message" text="Nenhum autor encontrado" />
                                        </children>
                                     </VBox>
                                  </content>
