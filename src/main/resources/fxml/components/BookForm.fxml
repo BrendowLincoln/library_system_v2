@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="form-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.components.BookFormController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="header-container" stylesheets="@../../styles/shared/DialogStyle.css">
+               <children>
+                  <Label fx:id="headerTitle" styleClass="header-title" text="Titulo" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fx:id="closeButton" onMouseClicked="#closeDialog" pickOnBounds="true" preserveRatio="true" styleClass="header-close-button">
+                           <image>
+                              <Image url="@../../assets/images/close-white-icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="main-container" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Código" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container">
+                           <children>
+                              <TextField fx:id="codeInput">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-code-input" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="60.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Titulo" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="bookTitleInput">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-title-input" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="162.0" prefHeight="30.0" prefWidth="200.0" styleClass="tables-container" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" styleClass="authors-header-section">
+                                 <children>
+                                    <Label styleClass="authors-header-section-title" text="Autores" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="authorsTable" prefHeight="200.0" prefWidth="200.0" styleClass="no-header" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn editable="false" prefWidth="347.0" resizable="false" sortable="false" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets bottom="7.0" />
+                                 </VBox.margin>
+                              </TableView>
+                              <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0" styleClass="combo-action-buttons-container" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <ComboBox fx:id="authorOption" prefWidth="150.0" promptText="Autores">
+                                       <styleClass>
+                                          <String fx:value="form-input" />
+                                          <String fx:value="form-authors-combo" />
+                                       </styleClass>
+                                    </ComboBox>
+                                    <Button fx:id="addAuthorButton" mnemonicParsing="false" styleClass="action-add-button" text="+" />
+                                    <Button fx:id="removeAuthorButton" mnemonicParsing="false" styleClass="action-remove-button" text="-" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" styleClass="authors-header-section">
+                                 <children>
+                                    <Label styleClass="authors-header-section-title" text="Cópias" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="copiesTable" prefHeight="200.0" prefWidth="200.0" styleClass="copies-table" VBox.vgrow="ALWAYS">
+                                 <columns>
+                                    <TableColumn editable="false" prefWidth="73.0" resizable="false" sortable="false" text="Código" />
+                                    <TableColumn editable="false" prefWidth="150.0" sortable="false" text="Data de aquisição" />
+                                    <TableColumn editable="false" prefWidth="115.0" sortable="false" text="Estado" />
+                                 </columns>
+                                 <VBox.margin>
+                                    <Insets bottom="7.0" />
+                                 </VBox.margin>
+                              </TableView>
+                              <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0" styleClass="combo-action-buttons-container" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <DatePicker fx:id="dateAcquisitionDateInput" promptText="Data de aquisição">
+                                       <styleClass>
+                                          <String fx:value="form-input" />
+                                          <String fx:value="form-copy-acquisition-date-input" />
+                                       </styleClass>
+                                    </DatePicker>
+                                    <Button fx:id="addCopyButton" mnemonicParsing="false" styleClass="action-add-button" text="+" />
+                                    <Button fx:id="removeCopyButton" mnemonicParsing="false" styleClass="action-remove-button" text="-" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="bottom-container">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onMouseClicked="#delete" styleClass="delete-button-bottom" text="Excluir" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="cancelButton" mnemonicParsing="false" onMouseClicked="#cancel" styleClass="cancel-button-bottom" text="Cancelar" />
+                  <Button fx:id="saveButton" mnemonicParsing="false" onMouseClicked="#save" styleClass="save-button-bottom" text="Salvar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <opaqueInsets>
+      <Insets top="20.0" />
+   </opaqueInsets>
+   <stylesheets>
+      <URL value="@../../styles/shared/DialogStyle.css" />
+      <URL value="@../../styles/shared/components/BookFormStyle.css" />
+   </stylesheets>
+</AnchorPane>
