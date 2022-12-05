@@ -64,8 +64,9 @@ public class BooksPageController extends ControllerBase implements Initializable
         if(searchFilter != null) {
             searchInput.setText(searchFilter);
         }
-
         updateList(Objects.requireNonNullElse(searchFilter, ""));
+
+        DataProvider.setData("bookSearchHome", "");
     }
 
     //region EVENT METHODS
