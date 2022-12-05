@@ -44,4 +44,15 @@ public class Author {
     public String toString() {
         return this.firstName + " " + this.secondName;
     }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null) {
+            return false;
+        }
+
+        Author author = (Author) obj;
+        return this.id.equals(author.id);
+    }
 }

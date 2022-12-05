@@ -92,6 +92,6 @@ public class HomeController extends ControllerBase implements Initializable {
         String searchText = searchInput.getText();
         DataProvider.setData("bookSearchHome", searchText);
 
-        routerService.navigateTo(Router.AUTHORS_PAGE, stage);
+        routerService.navigateTo(Router.BOOKS_PAGE, stage);
     }
 }

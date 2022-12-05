@@ -1,7 +1,7 @@
 package br.org.femass.daos;
 
 import br.org.femass.models.Employee;
-import br.org.femass.utils.queires.EmployeeQueries;
+import br.org.femass.utils.queries.EmployeeQueries;
 
 import java.util.List;
 

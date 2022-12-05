@@ -1,4 +1,4 @@
-package br.org.femass.utils.queires;
+package br.org.femass.utils.queries;
 
 public class EmployeeQueries {
     public static final String GET_ALL_EMPLOYEES = "SELECT e FROM Employee e ORDER BY e.name";

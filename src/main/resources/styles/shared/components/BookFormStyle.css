@@ -82,6 +82,11 @@
     -fx-background-radius: 5px;
 }
 
+.action-add-button:hover,
+.action-remove-button:hover {
+    -fx-cursor: hand;
+}
+
 .action-add-button {
     -fx-background-color: #8FA5B9;
     -fx-text-fill: #FFFFFF;
@@ -101,6 +106,7 @@
 .form-authors-combo,
 .form-copy-acquisition-date-input {
     -fx-pref-width: 260px;
+    -fx-background-color: #FFFFFF;
 }
 
 .no-header .column-header-background {

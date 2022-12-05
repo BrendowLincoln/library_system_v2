@@ -74,14 +74,11 @@
                                     <Label styleClass="authors-header-section-title" text="Autores" />
                                  </children>
                               </HBox>
-                              <TableView fx:id="authorsTable" prefHeight="200.0" prefWidth="200.0" styleClass="no-header" VBox.vgrow="ALWAYS">
-                                <columns>
-                                  <TableColumn editable="false" prefWidth="347.0" resizable="false" sortable="false" />
-                                </columns>
+                              <ListView fx:id="authorsList" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                  <VBox.margin>
                                     <Insets bottom="7.0" />
                                  </VBox.margin>
-                              </TableView>
+                              </ListView>
                               <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0" styleClass="combo-action-buttons-container" HBox.hgrow="ALWAYS">
                                  <children>
                                     <ComboBox fx:id="authorOption" prefWidth="150.0" promptText="Autores">
@@ -90,8 +87,8 @@
                                           <String fx:value="form-authors-combo" />
                                        </styleClass>
                                     </ComboBox>
-                                    <Button fx:id="addAuthorButton" mnemonicParsing="false" styleClass="action-add-button" text="+" />
-                                    <Button fx:id="removeAuthorButton" mnemonicParsing="false" styleClass="action-remove-button" text="-" />
+                                    <Button fx:id="addAuthorButton" mnemonicParsing="false" onMouseClicked="#addAuthor" styleClass="action-add-button" text="+" />
+                                    <Button fx:id="removeAuthorButton" mnemonicParsing="false" onMouseClicked="#removeAuthor" styleClass="action-remove-button" text="-" />
                                  </children>
                               </HBox>
                            </children>
@@ -103,11 +100,10 @@
                                     <Label styleClass="authors-header-section-title" text="Cópias" />
                                  </children>
                               </HBox>
-                              <TableView fx:id="copiesTable" prefHeight="200.0" prefWidth="200.0" styleClass="copies-table" VBox.vgrow="ALWAYS">
+                              <TableView fx:id="copiesTable" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" styleClass="copies-table" VBox.vgrow="ALWAYS">
                                  <columns>
-                                    <TableColumn editable="false" prefWidth="73.0" resizable="false" sortable="false" text="Código" />
-                                    <TableColumn editable="false" prefWidth="150.0" sortable="false" text="Data de aquisição" />
-                                    <TableColumn editable="false" prefWidth="115.0" sortable="false" text="Estado" />
+                                    <TableColumn fx:id="acquisitionDateTableColumn" editable="false" prefWidth="169.0" sortable="false" text="Data de aquisição" />
+                                    <TableColumn fx:id="copyStatusTableColumn" editable="false" prefWidth="169.0" sortable="false" text="Estado" />
                                  </columns>
                                  <VBox.margin>
                                     <Insets bottom="7.0" />
@@ -115,14 +111,14 @@
                               </TableView>
                               <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0" styleClass="combo-action-buttons-container" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <DatePicker fx:id="dateAcquisitionDateInput" promptText="Data de aquisição">
+                                    <DatePicker fx:id="dateAcquisitionDateInput" focusTraversable="false" promptText="Data de aquisição">
                                        <styleClass>
                                           <String fx:value="form-input" />
                                           <String fx:value="form-copy-acquisition-date-input" />
                                        </styleClass>
                                     </DatePicker>
-                                    <Button fx:id="addCopyButton" mnemonicParsing="false" styleClass="action-add-button" text="+" />
-                                    <Button fx:id="removeCopyButton" mnemonicParsing="false" styleClass="action-remove-button" text="-" />
+                                    <Button fx:id="addCopyButton" mnemonicParsing="false" onMouseClicked="#addCopy" styleClass="action-add-button" text="+" />
+                                    <Button fx:id="removeCopyButton" mnemonicParsing="false" onMouseClicked="#removeCopy" styleClass="action-remove-button" text="-" />
                                  </children>
                               </HBox>
                            </children>

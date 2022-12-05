@@ -3,7 +3,7 @@
     -fx-pref-height: 500px;
     -fx-background-color: transparent !important;
     -fx-padding: 10px;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 20, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 25, 0, 0, 0);
 }
 
 .main-container {

@@ -1,10 +1,15 @@
 package br.org.femass.controllers;
 
 import br.org.femass.controllers.components.AuthorFormController;
+import br.org.femass.controllers.components.BookFormController;
 import br.org.femass.controllers.components.cards.AuthorCardListItemController;
-import br.org.femass.daos.AuthorDao;
+import br.org.femass.controllers.components.cards.BookCardListItemController;
+import br.org.femass.daos.BookDao;
 import br.org.femass.models.Author;
+import br.org.femass.models.Book;
 import br.org.femass.models.read.AuthorCardModel;
+import br.org.femass.models.read.BookCardModel;
+import br.org.femass.utils.shared.DataProvider;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,10 +34,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
-public class AuthorsController extends ControllerBase implements Initializable {
+public class BooksPageController extends ControllerBase implements Initializable {
 
     @FXML
     public VBox cardList;
@@ -43,20 +49,29 @@ public class AuthorsController extends ControllerBase implements Initializable {
     @FXML
     public Button searchButton;
 
-    private final AuthorDao _dao = new AuthorDao();
 
-    private List<Author> authors = new ArrayList<>();
+    private final BookDao _dao = new BookDao();
+
+    private List<Book> _books = new ArrayList<>();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         configureUserData();
-        updateList("");
+
+        String searchFilter = (String) DataProvider.getDataByKey("bookSearchHome");
+
+        if(searchFilter != null) {
+            searchInput.setText(searchFilter);
+        }
+
+        updateList(Objects.requireNonNullElse(searchFilter, ""));
     }
 
     //region EVENT METHODS
     public void searchKeyPressed(KeyEvent keyEvent) throws IOException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)) {
-           updateList(this.searchInput.getText());
+            updateList(this.searchInput.getText());
         }
     }
 
@@ -74,29 +89,29 @@ public class AuthorsController extends ControllerBase implements Initializable {
     //endregion EVENT METHODS
 
     //region PUBLIC METHODS
-    public void openForm(Author author) throws IOException {
+    public void openForm(Book book) throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
         Stage formStage = new Stage();
 
-        URL location = getClass().getResource("/fxml/components/AuthorForm.fxml");
+        URL location = getClass().getResource("/fxml/components/BookForm.fxml");
         loader.setLocation(location);
         loader.setBuilderFactory(new JavaFXBuilderFactory());
 
 
         Parent root = loader.load(location.openStream());
-        AuthorFormController controller = loader.getController();
+        BookFormController controller = loader.getController();
 
 
         Scene scene = new Scene(root);
-        formStage.setTitle("Cadastro de Autores");
+        formStage.setTitle("Cadastro de livros");
         formStage.setScene(scene);
         controller.setStage(formStage);
         formStage.initStyle(StageStyle.UNDECORATED);
         formStage.setResizable(false);
         formStage.getScene().setFill(Color.TRANSPARENT);
         formStage.setOnShown((x) -> {
-            controller.setAuthor(author);
+            controller.setBook(book);
         });
         formStage.focusedProperty().addListener((obs, wasFocused, isNowFocused) -> {
             if (!isNowFocused) {
@@ -113,25 +128,22 @@ public class AuthorsController extends ControllerBase implements Initializable {
         try {
 
             if(filter.isEmpty() || filter.isBlank()) {
-                this.authors = this._dao.getAll();
+                this._books = this._dao.getAll();
             } else {
-                this.authors = this._dao.getByFilter(filter);
+                this._books = this._dao.getByFilter(filter);
             }
 
-            List<AuthorCardModel> authorsCard = authors.stream().map((author) -> {
-                Integer registeredBooksCount = _dao.getRegisteredBooksByAuthorId(author.getId());
-
-                return new AuthorCardModel(
-                        author.getId(),
-                        author.getFirstName(),
-                        author.getSecondName(),
-                        author.getNationality(),
-                        registeredBooksCount
+            List<BookCardModel> booksCard = this._books.stream().map((book) -> {
+                return new BookCardModel(
+                        book.getId(),
+                        book.getTitle(),
+                        book.getAuthors(),
+                        book.getCopies().size()
                 );
             }).collect(Collectors.toList());
 
-            if(authorsCard.isEmpty()) {
-                Label emptyResultLabel = new Label("Nenhum autor encontrado");
+            if(booksCard.isEmpty()) {
+                Label emptyResultLabel = new Label("Nenhum livro encontrado");
                 emptyResultLabel.getStyleClass().set(0, "authors-group-empty-message");
                 cardList.getChildren().clear();
                 cardList.getChildren().add(emptyResultLabel);
@@ -139,7 +151,7 @@ public class AuthorsController extends ControllerBase implements Initializable {
             }
 
 
-            for (int i = 0; i < authorsCard.size(); i++) {
+            for (int i = 0; i < booksCard.size(); i++) {
 
                 if(i == 0) {
                     cardList.setAlignment(Pos.TOP_CENTER);
@@ -148,19 +160,19 @@ public class AuthorsController extends ControllerBase implements Initializable {
 
                 FXMLLoader loader = new FXMLLoader();
 
-                URL location = getClass().getResource("/fxml/components/cards/AuthorCardListItem.fxml");
+                URL location = getClass().getResource("/fxml/components/cards/BookCardListItem.fxml");
                 loader.setLocation(location);
                 loader.setBuilderFactory(new JavaFXBuilderFactory());
                 Node lastEmployeeCard= loader.load(location.openStream());
 
-                AuthorCardListItemController controller = loader.getController();
-                controller.setCardData(authorsCard.get(i));
+                BookCardListItemController controller = loader.getController();
+                controller.setCardData(booksCard.get(i));
 
-                Author clickedAuthor = authors.get(i);
+                Book clickedBook = this._books.get(i);
 
                 lastEmployeeCard.setOnMouseClicked((x) -> {
                     try {
-                        openForm(clickedAuthor);
+                        openForm(clickedBook);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
