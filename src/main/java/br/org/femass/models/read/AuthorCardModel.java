@@ -2,15 +2,17 @@ package br.org.femass.models.read;
 
 import br.org.femass.utils.enums.Nationality;
 
+import java.math.BigInteger;
+
 public class AuthorCardModel {
 
     private Long id;
     private String firstName;
     private String secondName;
     private Nationality nationality;
-    private Integer registeredBooksCount;
+    private BigInteger registeredBooksCount;
 
-    public AuthorCardModel(Long id, String firstName, String secondName, Nationality nationality, Integer registeredBooksCount) {
+    public AuthorCardModel(Long id, String firstName, String secondName, Nationality nationality, BigInteger registeredBooksCount) {
         this.id = id;
         this.firstName = firstName;
         this.secondName = secondName;
@@ -34,7 +36,7 @@ public class AuthorCardModel {
         return this.id;
     }
 
-    public Integer getRegisteredBooksCount() {
+    public BigInteger getRegisteredBooksCount() {
         return this.registeredBooksCount;
     }
 }

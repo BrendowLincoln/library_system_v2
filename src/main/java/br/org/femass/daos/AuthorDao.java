@@ -3,6 +3,7 @@ package br.org.femass.daos;
 import br.org.femass.models.Author;
 import br.org.femass.utils.queries.AuthorQueries;
 
+import java.math.BigInteger;
 import java.util.List;
 
 public class AuthorDao extends Dao<Author> {
@@ -18,7 +19,11 @@ public class AuthorDao extends Dao<Author> {
         return query.getResultList();
     }
 
-    public Integer getRegisteredBooksByAuthorId(Long Id) {
-        return  1;
+    public BigInteger getRegisteredBooksByAuthorId(Long id) {
+        var query = em.createNativeQuery(AuthorQueries.GET_REGISTERED_BOOKS_COUNT_BY_AUTHOR);
+
+        query.setParameter("id", id);
+
+        return (BigInteger) query.getSingleResult();
     }
 }

@@ -111,7 +111,7 @@
                               </TableView>
                               <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0" styleClass="combo-action-buttons-container" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <DatePicker fx:id="dateAcquisitionDateInput" focusTraversable="false" promptText="Data de aquisição">
+                                    <DatePicker fx:id="acquisitionDateInput" focusTraversable="false" promptText="Data de aquisição">
                                        <styleClass>
                                           <String fx:value="form-input" />
                                           <String fx:value="form-copy-acquisition-date-input" />

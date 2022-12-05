@@ -12,17 +12,14 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.net.URL;
-import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -45,11 +42,12 @@ public class BookFormController implements Initializable {
     @FXML
     public ComboBox<Author> authorOption;
     @FXML
-    public DatePicker dateAcquisitionDateInput;
+    public DatePicker acquisitionDateInput;
     @FXML
     public Button addAuthorButton;
     @FXML
     public Button removeAuthorButton;
+
     @FXML
     public Button addCopyButton;
     @FXML
@@ -208,7 +206,7 @@ public class BookFormController implements Initializable {
     }
 
     public void addCopy(MouseEvent mouseEvent) {
-        LocalDate date = dateAcquisitionDateInput.getValue();
+        LocalDate date = acquisitionDateInput.getValue();
         if(date == null) {
             return;
         }

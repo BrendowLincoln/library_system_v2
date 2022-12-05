@@ -26,6 +26,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -119,7 +120,7 @@ public class AuthorsPageController extends ControllerBase implements Initializab
             }
 
             List<AuthorCardModel> authorsCard = _authors.stream().map((author) -> {
-                Integer registeredBooksCount = _dao.getRegisteredBooksByAuthorId(author.getId());
+                BigInteger registeredBooksCount = _dao.getRegisteredBooksByAuthorId(author.getId());
 
                 return new AuthorCardModel(
                         author.getId(),
