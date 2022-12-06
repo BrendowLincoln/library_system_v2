@@ -14,7 +14,7 @@ public class Loan {
     private LocalDate returnDate;
     @OneToMany(cascade = CascadeType.MERGE)
     private List<Copy> copies;
-    @OneToOne(cascade = CascadeType.MERGE)
+    @ManyToOne(cascade = CascadeType.MERGE)
     private Reader reader;
 
     public Loan() { }

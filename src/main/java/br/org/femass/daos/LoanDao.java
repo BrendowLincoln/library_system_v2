@@ -12,7 +12,7 @@ public class LoanDao extends Dao<Loan> {
     }
 
     public List<Loan> getByFilter(String filter) {
-        var query = em.createQuery(LoanQueries.GET_LOANS_BY_FILTER);
+        var query = em.createNativeQuery(LoanQueries.GET_LOANS_BY_FILTER_NATIVE, Loan.class);
 
         query.setParameter("filter", "%" + filter.toLowerCase() + "%");
 

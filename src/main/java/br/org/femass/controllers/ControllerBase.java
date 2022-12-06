@@ -1,6 +1,7 @@
 package br.org.femass.controllers;
 
 import br.org.femass.models.Employee;
+import br.org.femass.utils.enums.Role;
 import br.org.femass.utils.router.Router;
 import br.org.femass.utils.router.RouterService;
 import br.org.femass.utils.services.UserProvider;
@@ -10,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -36,6 +38,16 @@ public class ControllerBase {
     public Button booksButton;
     @FXML
     public Button homeButton;
+    @FXML
+    public HBox sideNavEmployeesButtonContainer;
+    @FXML
+    public HBox sideNavAuthorsButtonContainer;
+    @FXML
+    public HBox sideNavBookButtonContainer;
+    @FXML
+    public HBox sideNavReadersButtonContainer;
+    @FXML
+    public HBox sideNavLoansButtonContainer;
 
     protected Stage stage;
 
@@ -51,6 +63,18 @@ public class ControllerBase {
     public void configureUserData() {
         this.userNameLabel.setText(employee.getName());
         this.userRoleLabel.setText(employee.getUser().getRole().toString());
+
+        if(employee.getUser().getRole() == Role.LIBRARIAN) {
+            sideNavReadersButtonContainer.setVisible(false);
+            sideNavLoansButtonContainer.setVisible(false);
+            sideNavEmployeesButtonContainer.setVisible(false);
+        }
+
+        if(employee.getUser().getRole() == Role.ATTENDANT) {
+            sideNavBookButtonContainer.setVisible(false);
+            sideNavAuthorsButtonContainer.setVisible(false);
+            sideNavEmployeesButtonContainer.setVisible(false);
+        }
     }
 
     public void homePage(MouseEvent mouseEvent) throws IOException {

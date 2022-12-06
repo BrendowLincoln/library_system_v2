@@ -1,11 +1,10 @@
 package br.org.femass.controllers;
 
-import br.org.femass.controllers.components.LoanFormController;
-import br.org.femass.controllers.components.cards.LoanCardListItemController;
-import br.org.femass.daos.LoanDao;
-import br.org.femass.models.Loan;
-import br.org.femass.models.read.LoanCardModel;
-import br.org.femass.utils.services.DataProvider;
+import br.org.femass.controllers.components.EmployeeFormController;
+import br.org.femass.controllers.components.cards.EmployeeCardListItemController;
+import br.org.femass.daos.EmployeeDao;
+import br.org.femass.models.Employee;
+import br.org.femass.models.read.EmployeeCardModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,9 +13,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -27,47 +24,37 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-import java.math.BigInteger;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
-public class LoansPageController extends ControllerBase implements Initializable {
+public class EmployeePageController extends ControllerBase implements Initializable {
 
-    @FXML
-    public VBox cardList;
-    @FXML
-    public ScrollPane scrollContainer;
     @FXML
     public TextField searchInput;
     @FXML
-    public Button searchButton;
+    public VBox cardList;
 
-    private final LoanDao _dao = new LoanDao();
 
-    private List<Loan> _loans = new ArrayList<>();
+
+    private final EmployeeDao _dao = new EmployeeDao();
+
+    private List<Employee> _employees = new ArrayList<>();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         configureUserData();
-
-        String searchFilter = (String) DataProvider.getDataByKey("loanSearchHome");
-
-        if(searchFilter != null) {
-            searchInput.setText(searchFilter);
-        }
-        updateList(Objects.requireNonNullElse(searchFilter, ""));
-
-        DataProvider.setData("loanSearchHome", "");
+        updateList("");
     }
+
 
     //region EVENT METHODS
     public void searchKeyPressed(KeyEvent keyEvent) throws IOException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)) {
-           updateList(this.searchInput.getText());
+            updateList(this.searchInput.getText());
         }
     }
 
@@ -84,30 +71,31 @@ public class LoansPageController extends ControllerBase implements Initializable
     }
     //endregion EVENT METHODS
 
+
     //region PUBLIC METHODS
-    public void openForm(Loan loan) throws IOException {
+    public void openForm(Employee employee) throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
         Stage formStage = new Stage();
 
-        URL location = getClass().getResource("/fxml/components/LoanForm.fxml");
+        URL location = getClass().getResource("/fxml/components/EmployeeForm.fxml");
         loader.setLocation(location);
         loader.setBuilderFactory(new JavaFXBuilderFactory());
 
 
         Parent root = loader.load(location.openStream());
-        LoanFormController controller = loader.getController();
+        EmployeeFormController controller = loader.getController();
 
 
         Scene scene = new Scene(root);
-        formStage.setTitle("Cadastro de empréstimo");
+        formStage.setTitle("Cadastro de funcionários");
         formStage.setScene(scene);
         controller.setStage(formStage);
         formStage.initStyle(StageStyle.UNDECORATED);
         formStage.setResizable(false);
         formStage.getScene().setFill(Color.TRANSPARENT);
         formStage.setOnShown((x) -> {
-            controller.setLoan(loan);
+            controller.setEmployee(employee);
         });
         formStage.focusedProperty().addListener((obs, wasFocused, isNowFocused) -> {
             if (!isNowFocused) {
@@ -124,29 +112,22 @@ public class LoansPageController extends ControllerBase implements Initializable
         try {
 
             if(filter.isEmpty() || filter.isBlank()) {
-                this._loans = this._dao.getAll();
+                this._employees = this._dao.getAll();
             } else {
-                this._loans = this._dao.getByFilter(filter);
+                this._employees = this._dao.getByFilter(filter);
             }
 
-            List<LoanCardModel> loanCard = _loans.stream().map((loan) -> {
+            List<EmployeeCardModel> employeeCards = _employees.stream().map((employee) -> {
 
-                String readerType = loan.getReader().getDeadlineForReturn() == 15 ? "Aluno" : "Professor";
-
-                return new LoanCardModel(
-                        loan.getId(),
-                        loan.getLoanDate(),
-                        loan.getExpectedReturnDate(),
-                        loan.getReturnDate(),
-                        loan.getCopies().size(),
-                        readerType,
-                        loan.getReader().getName(),
-                        loan.loanStatus()
+                return new EmployeeCardModel(
+                        employee.getId(),
+                        employee.getName(),
+                        employee.getUser().getRole()
                 );
             }).collect(Collectors.toList());
 
-            if(loanCard.isEmpty()) {
-                Label emptyResultLabel = new Label("Nenhum empréstimo encontrado");
+            if(employeeCards.isEmpty()) {
+                Label emptyResultLabel = new Label("Nenhum autor encontrado");
                 emptyResultLabel.getStyleClass().set(0, "authors-group-empty-message");
                 cardList.getChildren().clear();
                 cardList.getChildren().add(emptyResultLabel);
@@ -154,7 +135,7 @@ public class LoansPageController extends ControllerBase implements Initializable
             }
 
 
-            for (int i = 0; i < loanCard.size(); i++) {
+            for (int i = 0; i < employeeCards.size(); i++) {
 
                 if(i == 0) {
                     cardList.setAlignment(Pos.TOP_CENTER);
@@ -163,19 +144,19 @@ public class LoansPageController extends ControllerBase implements Initializable
 
                 FXMLLoader loader = new FXMLLoader();
 
-                URL location = getClass().getResource("/fxml/components/cards/LoanCardListItem.fxml");
+                URL location = getClass().getResource("/fxml/components/cards/EmployeeCardListItem.fxml");
                 loader.setLocation(location);
                 loader.setBuilderFactory(new JavaFXBuilderFactory());
                 Node lastEmployeeCard= loader.load(location.openStream());
 
-                LoanCardListItemController controller = loader.getController();
-                controller.setCardData(loanCard.get(i));
+                EmployeeCardListItemController controller = loader.getController();
+                controller.setCardData(employeeCards.get(i));
 
-                Loan clickedLoan = _loans.get(i);
+                Employee clickedAuthor = _employees.get(i);
 
                 lastEmployeeCard.setOnMouseClicked((x) -> {
                     try {
-                        openForm(clickedLoan);
+                        openForm(clickedAuthor);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }

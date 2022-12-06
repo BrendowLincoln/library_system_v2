@@ -8,9 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1366.0" styleClass="application-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.HomeController">
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" styleClass="application-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.EmployeePageController">
    <children>
-      <HBox alignment="CENTER" fillHeight="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="side-nav-container" HBox.hgrow="ALWAYS">
                <children>
@@ -39,17 +39,12 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
                            <children>
-                              <Button fx:id="homeButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#homePage" text="Início" HBox.hgrow="ALWAYS">
-                                 <styleClass>
-                                    <String fx:value="side-nav-button" />
-                                    <String fx:value="side-nav-button-selected" />
-                                 </styleClass>
-                              </Button>
+                              <Button fx:id="homeButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#homePage" styleClass="side-nav-button" text="Início" HBox.hgrow="ALWAYS" />
                               <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                                  <children>
                                     <ImageView pickOnBounds="true" preserveRatio="true" styleClass="side-nav-button-icon">
                                        <image>
-                                          <Image url="@../assets/images/arrow-blue-icon.png" />
+                                          <Image url="@../assets/images/arrow-gray-icon.png" />
                                        </image>
                                     </ImageView>
                                  </children>
@@ -114,12 +109,16 @@
                         </HBox>
                         <HBox fx:id="sideNavEmployeesButtonContainer" layoutX="10.0" layoutY="319.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
                            <children>
-                              <Button fx:id="employeesButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#employeesPage" styleClass="side-nav-button" text="Funcionários" HBox.hgrow="ALWAYS" />
+                              <Button fx:id="employeesButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#employeesPage" text="Funcionários" HBox.hgrow="ALWAYS">
+                                 <styleClass>
+                                    <String fx:value="side-nav-button" />
+                                    <String fx:value="side-nav-button-selected" />
+                                 </styleClass></Button>
                               <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                                  <children>
                                     <ImageView pickOnBounds="true" preserveRatio="true" styleClass="side-nav-button-icon">
                                        <image>
-                                          <Image url="@../assets/images/arrow-gray-icon.png" />
+                                          <Image url="@../assets/images/arrow-blue-icon.png" />
                                        </image>
                                     </ImageView>
                                  </children>
@@ -155,7 +154,7 @@
                            <children>
                               <HBox prefHeight="83.0" prefWidth="200.0" styleClass="title-header-container" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <Label styleClass="title-header" text="Início" />
+                                    <Label styleClass="title-header" text="Funcionarios" />
                                  </children>
                               </HBox>
                               <HBox fillHeight="false" prefHeight="83.0" prefWidth="200.0" styleClass="logo-header-container" HBox.hgrow="ALWAYS">
@@ -169,46 +168,60 @@
                               </HBox>
                            </children>
                         </HBox>
-                        <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" styleClass="section-container">
+                        <HBox alignment="CENTER" fillHeight="false" prefHeight="170.0" prefWidth="992.0" styleClass="search-section-container">
                            <children>
-                              <Button fx:id="seeOverdueReadersButton" mnemonicParsing="false" onMouseClicked="#openOverdueReadersDialog" styleClass="overload-reader-button" text="Ver leitores atrasados" />
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0" styleClass="search-section-container">
-                           <children>
-                              <Label styleClass="search-content-title" text="Bem vindo(a) ao sistema de gerênciamento da biblioteca FeMASS">
-                                 <font>
-                                    <Font name="Tahoma" size="12.0" />
-                                 </font>
-                              </Label>
-                              <HBox alignment="CENTER" fillHeight="false" prefHeight="170.0" prefWidth="992.0" VBox.vgrow="NEVER">
+                              <AnchorPane minHeight="0.0" prefHeight="66.0" prefWidth="850.0" styleClass="search-input-container">
                                  <children>
-                                    <AnchorPane minHeight="0.0" prefHeight="66.0" prefWidth="850.0" styleClass="search-input-container">
-                                       <children>
-                                          <TextField fx:id="searchInput" layoutX="81.0" layoutY="53.0" onKeyPressed="#searchBookKeyPressed" prefWidth="0.0" promptText="Busque aqui o livro que deseja..." styleClass="search-input" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <font>
-                                                <Font name="Tahoma" size="16.0" />
-                                             </font>
-                                          </TextField>
-                                          <Button fx:id="searchButton" layoutX="833.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#searchBookClick" prefHeight="0.0" styleClass="search-input-button" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <graphic>
-                                                <ImageView pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../assets/images/search-blue-icon.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                          </Button>
-                                       </children>
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                       <opaqueInsets>
-                                          <Insets />
-                                       </opaqueInsets>
-                                    </AnchorPane>
+                                    <TextField fx:id="searchInput" layoutX="81.0" layoutY="53.0" onKeyPressed="#searchKeyPressed" prefWidth="0.0" promptText="Busque o funcionario que deseja" styleClass="search-input" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma" size="16.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button fx:id="searchButton" layoutX="761.0" mnemonicParsing="false" onMouseClicked="#searchBookClick" prefHeight="0.0" styleClass="search-input-button" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="1.0">
+                                       <graphic>
+                                          <ImageView pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/images/search-light-blue-icon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
                                  </children>
-                              </HBox>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </AnchorPane>
+                              <Button fx:id="addButton" graphicTextGap="18.0" mnemonicParsing="false" onMouseClicked="#add" styleClass="add-button" text="Adicionar">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/images/add-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="26.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <VBox fillWidth="false" prefHeight="590.0" prefWidth="1018.0" styleClass="list-card-container">
+                           <children>
+                              <ScrollPane fx:id="scrollContainer" pannable="true" prefHeight="503.0" prefWidth="979.0" styleClass="list-card-scroll" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <VBox fx:id="cardList" alignment="CENTER" prefHeight="540.0" prefWidth="969.0" styleClass="list-card">
+                                       <children>
+                                          <Label styleClass="authors-group-empty-message" text="Nenhum funcionario encontrado" />
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
                            </children>
                         </VBox>
                      </children>
@@ -219,7 +232,7 @@
       </HBox>
    </children>
    <stylesheets>
-      <URL value="@../styles/HomePageStyle.css" />
       <URL value="@../styles/shared/GlobalStyle.css" />
+      <URL value="@../styles/EmployeesPageStyle.css" />
    </stylesheets>
 </AnchorPane>

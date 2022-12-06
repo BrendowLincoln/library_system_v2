@@ -51,18 +51,28 @@ public class HomeController extends ControllerBase implements Initializable {
 
         if(employee.getUser().getRole() == Role.ATTENDANT) {
             seeOverdueReadersButton.setVisible(false);
+            searchInput.promptTextProperty().setValue("Busqque o empréstimo pelo leitor que deseja");
         }
 
     }
 
     public void searchBookKeyPressed(KeyEvent keyEvent) throws IOException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)) {
-            searchBook();
+
+            if (employee.getUser().getRole() == Role.ATTENDANT) {
+                searchLoan();
+            } else {
+                searchBook();
+            }
         }
     }
 
     public void searchBookClick(MouseEvent mouseEvent) throws IOException {
-        searchBook();
+        if (employee.getUser().getRole() == Role.ATTENDANT) {
+            searchLoan();
+        } else {
+            searchBook();
+        }
     }
 
 
@@ -71,6 +81,13 @@ public class HomeController extends ControllerBase implements Initializable {
         DataProvider.setData("bookSearchHome", searchText);
 
         routerService.navigateTo(Router.BOOKS_PAGE, stage);
+    }
+
+    private void searchLoan() throws IOException {
+        String searchText = searchInput.getText();
+        DataProvider.setData("loanSearchHome", searchText);
+
+        routerService.navigateTo(Router.LOANS_PAGE, stage);
     }
 
     public void openOverdueReadersDialog(MouseEvent mouseEvent) {

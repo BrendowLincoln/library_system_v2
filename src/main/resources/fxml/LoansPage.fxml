@@ -51,7 +51,7 @@
                               </HBox>
                            </children>
                         </HBox>
-                        <HBox layoutX="10.0" layoutY="119.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
+                        <HBox fx:id="sideNavBookButtonContainer" layoutX="10.0" layoutY="119.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
                            <children>
                               <Button fx:id="booksButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#booksPage" styleClass="side-nav-button" text="Livros" HBox.hgrow="ALWAYS" />
                               <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
@@ -65,7 +65,7 @@
                               </HBox>
                            </children>
                         </HBox>
-                        <HBox layoutX="10.0" layoutY="169.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
+                        <HBox fx:id="sideNavAuthorsButtonContainer" layoutX="10.0" layoutY="169.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
                            <children>
                               <Button fx:id="authorsButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#authorsPage" styleClass="side-nav-button" text="Autores" HBox.hgrow="ALWAYS" />
                               <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
@@ -79,7 +79,7 @@
                               </HBox>
                            </children>
                         </HBox>
-                        <HBox layoutX="10.0" layoutY="219.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
+                        <HBox fx:id="sideNavReadersButtonContainer" layoutX="10.0" layoutY="219.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
                            <children>
                               <Button fx:id="readersButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#readersPage" styleClass="side-nav-button" text="Leitores" HBox.hgrow="ALWAYS" />
                               <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
@@ -93,7 +93,7 @@
                               </HBox>
                            </children>
                         </HBox>
-                        <HBox layoutX="10.0" layoutY="269.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
+                        <HBox fx:id="sideNavLoansButtonContainer" layoutX="10.0" layoutY="269.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
                            <children>
                               <Button fx:id="loansButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#loansPage" text="Empréstimos" HBox.hgrow="ALWAYS">
                                  <styleClass>
@@ -111,7 +111,7 @@
                               </HBox>
                            </children>
                         </HBox>
-                        <HBox layoutX="10.0" layoutY="319.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
+                        <HBox fx:id="sideNavEmployeesButtonContainer" layoutX="10.0" layoutY="319.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
                            <children>
                               <Button fx:id="employeesButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#employeesPage" styleClass="side-nav-button" text="Funcionários" HBox.hgrow="ALWAYS" />
                               <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
