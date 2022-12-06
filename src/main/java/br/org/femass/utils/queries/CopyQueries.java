@@ -1,5 +1,6 @@
 package br.org.femass.utils.queries;
 
 public class CopyQueries {
-    public static final String GET_COPIES_BY_BOOK_ID = "SELECT c FROM public.Copy INNER JOIN Book_Copy ON ";
+    public static final String GET_ALL_COPIES = "SELECT c FROM Copy c";
+    public static final String GET_AVAILABLE_COPIES = "SELECT c FROM Copy c WHERE c.isLoaned = false";
 }

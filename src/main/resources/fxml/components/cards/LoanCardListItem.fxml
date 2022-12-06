@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="cardContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="card-container" stylesheets="@../../../styles/shared/components/cards/LoanCardListItemStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.components.cards.LoanCardListItemController">
+   <children>
+      <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0" spacing="3.0" styleClass="align-card-container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox fillHeight="false" prefHeight="72.0" prefWidth="200.0" styleClass="id-badge">
+               <children>
+                  <Label fx:id="idLabel" styleClass="id-label-badge" text="0" />
+               </children>
+            </HBox>
+            <ImageView fitHeight="105.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/images/book-not-found-squared-image.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </ImageView>
+            <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" styleClass="author-info-container" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label fx:id="readerNameLabel" styleClass="author-name-label" text="#name" />
+                        <Label fx:id="readerTypeLabel" styleClass="author-nationality-label" text="#readerType" />
+                     </children>
+                  </HBox>
+                  <HBox fillHeight="false" prefHeight="72.0" prefWidth="200.0" styleClass="loan-status-badge">
+                     <children>
+                        <Label fx:id="statusLabel" styleClass="loan-status-label-badge" text="#status" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="539.0">
+                     <children>
+                        <Label fx:id="authorNationalityLabel1" prefHeight="20.0" prefWidth="106.0" styleClass="info-title-label" text="Empréstimo">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="loanDateLabel" styleClass="subtitle-label" text="#loanDate" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="71.0" prefHeight="25.0" prefWidth="539.0">
+                     <children>
+                        <Label fx:id="authorNationalityLabel11" styleClass="info-title-label" text="Previsão de devolução">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="expectedReturnDateLabel" styleClass="subtitle-label" text="#expectedReturnDate" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="85.0" prefHeight="25.0" prefWidth="539.0">
+                     <children>
+                        <Label fx:id="authorNationalityLabel111" styleClass="info-title-label" text="Devolução">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="returnDateLabel" styleClass="subtitle-label" text="-" />
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="registered-books-container">
+               <children>
+                  <Label fx:id="loanedBooksCount" styleClass="register-books-count" text="0" />
+                  <Label styleClass="registered-books-label" text="Livros" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

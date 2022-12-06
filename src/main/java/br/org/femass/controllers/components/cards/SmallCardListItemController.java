@@ -1,5 +1,6 @@
 package br.org.femass.controllers.components.cards;
 
+import br.org.femass.models.read.LoanCardModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -10,6 +11,7 @@ import java.net.URL;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class SmallCardListItemController implements Initializable {
@@ -36,15 +38,15 @@ public class SmallCardListItemController implements Initializable {
 
     }
 
-    public void setData() {
+    public void setCardData(LoanCardModel loan) {
 
-        readerLoanLabel.setText("Lucas Sales");
-        readerRoleLoanLabel.setText("Aluno");
-        statusLoanBadge.setText("Emprestado");
-        loanDataLabel.setText("22/02/2022");
-        returnForecastDataLabel.setText("22/03/2022");
-        returnDataLabel.setText("20/03/2022");
-        numberOfBooksLabel.setText("3");
+        readerLoanLabel.setText(loan.getReaderName());
+        readerRoleLoanLabel.setText(loan.getReaderType());
+        statusLoanBadge.setText(loan.getLoanStatus());
+        loanDataLabel.setText(loan.getLoanDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        returnForecastDataLabel.setText(loan.getExpectedReturnDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        returnDataLabel.setText(loan.getReturnDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        numberOfBooksLabel.setText(loan.getBoredBooksCount().toString());
 
     }
 }

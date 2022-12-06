@@ -1,8 +1,10 @@
 package br.org.femass.daos;
 
 import br.org.femass.models.Book;
+import br.org.femass.models.Copy;
 import br.org.femass.utils.queries.AuthorQueries;
 import br.org.femass.utils.queries.BookQueries;
+import br.org.femass.utils.queries.CopyQueries;
 
 import java.util.List;
 

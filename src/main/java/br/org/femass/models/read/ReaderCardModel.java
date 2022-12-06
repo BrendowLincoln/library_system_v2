@@ -1,5 +1,7 @@
 package br.org.femass.models.read;
 
+import java.math.BigInteger;
+
 public class ReaderCardModel {
     public Long id;
     public String name;
@@ -8,9 +10,9 @@ public class ReaderCardModel {
     public String telephone;
     public String register;
     public String subject;
-    public Integer boredBooksCount;
+    public BigInteger boredBooksCount;
 
-    public ReaderCardModel(Long id, String name, String address, String telephone, String register, String subject, Integer boredBooksCount, String readerType) {
+    public ReaderCardModel(Long id, String name, String address, String telephone, String register, String subject, BigInteger boredBooksCount, String readerType) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -49,7 +51,7 @@ public class ReaderCardModel {
         return subject;
     }
 
-    public Integer getBoredBooksCount() {
+    public BigInteger getBoredBooksCount() {
         return boredBooksCount;
     }
 }

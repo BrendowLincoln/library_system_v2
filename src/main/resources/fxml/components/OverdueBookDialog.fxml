@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="form-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.components.OverdueBookDialogController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="header-container" stylesheets="@../../styles/shared/DialogStyle.css">
+               <children>
+                  <Label fx:id="headerTitle" styleClass="header-title" text="Leitores em atraso" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fx:id="closeButton" onMouseClicked="#closeDialog" pickOnBounds="true" preserveRatio="true" styleClass="header-close-button">
+                           <image>
+                              <Image url="@../../assets/images/close-white-icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="main-container" VBox.vgrow="ALWAYS">
+               <children>
+                  <ListView fx:id="overdueReadersList" prefHeight="308.0" prefWidth="646.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="bottom-container">
+               <children>
+                  <Button fx:id="confirmButton" mnemonicParsing="false" onMouseClicked="#confirm" styleClass="save-button-bottom" text="OK" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <opaqueInsets>
+      <Insets top="20.0" />
+   </opaqueInsets>
+   <stylesheets>
+      <URL value="@../../styles/shared/DialogStyle.css" />
+      <URL value="@../../styles/shared/components/OverdueBookDialogStyle.css" />
+   </stylesheets>
+</AnchorPane>

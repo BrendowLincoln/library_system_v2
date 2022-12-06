@@ -29,6 +29,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.net.URL;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -138,6 +139,9 @@ public class ReadersPageController extends ControllerBase implements Initializab
             });
 
             List<ReaderCardModel> readerCards = _readers.stream().map((reader) -> {
+
+                BigInteger borrowedBooksCount = _dao.getBorrowedBooksCount(reader.getId());
+
                 if(reader.getDeadlineForReturn() == 15) {
                     return new ReaderCardModel(
                             reader.getId(),
@@ -146,7 +150,7 @@ public class ReadersPageController extends ControllerBase implements Initializab
                             reader.getTelephone().toString(),
                             ((Student) reader).getRegister(),
                             null,
-                            1,
+                            borrowedBooksCount,
                             "Aluno"
                     );
                 }
@@ -158,7 +162,7 @@ public class ReadersPageController extends ControllerBase implements Initializab
                         reader.getTelephone().toString(),
                         null,
                         ((Teacher) reader).getSubject(),
-                        1,
+                        borrowedBooksCount,
                         "Professor"
                 );
             }).collect(Collectors.toList());

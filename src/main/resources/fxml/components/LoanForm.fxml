@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="form-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.components.LoanFormController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="header-container" stylesheets="@../../styles/shared/DialogStyle.css">
+               <children>
+                  <Label fx:id="headerTitle" styleClass="header-title" text="Titulo" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fx:id="closeButton" onMouseClicked="#closeDialog" pickOnBounds="true" preserveRatio="true" styleClass="header-close-button">
+                           <image>
+                              <Image url="@../../assets/images/close-white-icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="main-container" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Código" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container">
+                           <children>
+                              <TextField fx:id="codeInput">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-code-input" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="60.0" prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Leitor" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container" HBox.hgrow="ALWAYS">
+                           <children>
+                              <ComboBox fx:id="readerOption" prefWidth="150.0">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-authors-combo" />
+                                 </styleClass>
+                              </ComboBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="38.0" prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Data de empréstimo" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container">
+                           <children>
+                              <DatePicker fx:id="loanDateInput" disable="true" editable="false">
+                                 <styleClass>
+                                    <String fx:value="form-copy-acquisition-date-input" />
+                                    <String fx:value="form-input" />
+                                 </styleClass>
+                              </DatePicker>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="140.0" prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" styleClass="form-label-container">
+                           <children>
+                              <Label prefHeight="25.0" prefWidth="179.0" styleClass="form-label" text="Previsão de devolução" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container">
+                           <children>
+                              <DatePicker fx:id="expectedReturnDateInput" disable="true" editable="false">
+                                 <styleClass>
+                                    <String fx:value="form-copy-acquisition-date-input" />
+                                    <String fx:value="form-input" />
+                                 </styleClass>
+                              </DatePicker>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="191.0" prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" styleClass="form-label-container">
+                           <children>
+                              <Label prefHeight="25.0" prefWidth="179.0" styleClass="form-label" text="Devolução" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container">
+                           <children>
+                              <DatePicker fx:id="returnDateInput" disable="true" editable="false">
+                                 <styleClass>
+                                    <String fx:value="form-copy-acquisition-date-input" />
+                                    <String fx:value="form-input" />
+                                 </styleClass>
+                              </DatePicker>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="162.0" prefHeight="30.0" prefWidth="200.0" styleClass="tables-container" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" styleClass="authors-header-section">
+                                 <children>
+                                    <Label styleClass="authors-header-section-title" text="Copias" />
+                                 </children>
+                              </HBox>
+                              <ListView fx:id="copiesList" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets bottom="7.0" />
+                                 </VBox.margin>
+                              </ListView>
+                              <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0" styleClass="combo-action-buttons-container" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <ComboBox fx:id="copiesOption" prefWidth="150.0" promptText="Copias">
+                                       <styleClass>
+                                          <String fx:value="form-input" />
+                                          <String fx:value="form-authors-combo" />
+                                       </styleClass>
+                                    </ComboBox>
+                                    <Button fx:id="addCopyButton" mnemonicParsing="false" onMouseClicked="#addCopy" styleClass="action-add-button" text="+" />
+                                    <Button fx:id="removeCopyButton" mnemonicParsing="false" onMouseClicked="#removeCopy" styleClass="action-remove-button" text="-" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="bottom-container">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="returnLoanButton" mnemonicParsing="false" onMouseClicked="#returnLoan" text="Devolver">
+                           <styleClass>
+                              <String fx:value="delete-button-bottom" />
+                              <String fx:value="return-button-background" />
+                           </styleClass></Button>
+                     </children>
+                  </HBox>
+                  <Button fx:id="cancelButton" mnemonicParsing="false" onMouseClicked="#cancel" styleClass="cancel-button-bottom" text="Cancelar" />
+                  <Button fx:id="saveButton" mnemonicParsing="false" onMouseClicked="#save" styleClass="save-button-bottom" text="Salvar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <opaqueInsets>
+      <Insets top="20.0" />
+   </opaqueInsets>
+   <stylesheets>
+      <URL value="@../../styles/shared/DialogStyle.css" />
+      <URL value="@../../styles/shared/components/LoanFormStyle.css" />
+   </stylesheets>
+</AnchorPane>

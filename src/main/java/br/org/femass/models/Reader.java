@@ -36,4 +36,16 @@ public class Reader {
     public Integer getDeadlineForReturn() {
         return deadlineForReturn;
     }
+
+    public String readerType() {
+        if(this.deadlineForReturn == 15) {
+            return "Aluno";
+        }
+
+        return "Professor";
+    }
+    @Override
+    public String toString() {
+        return this.name +" (" + this.readerType() +")";
+    }
 }

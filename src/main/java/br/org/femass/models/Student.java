@@ -28,4 +28,9 @@ public class Student extends Reader {
     public String getRegister() {
         return register;
     }
+
+    @Override
+    public String toString() {
+        return this.name +" (" + this.readerType() +")";
+    }
 }

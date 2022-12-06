@@ -28,4 +28,9 @@ public class Teacher extends Reader {
     public String getSubject() {
         return this.subject;
     }
+
+    @Override
+    public String toString() {
+        return this.name +" (" + this.readerType() +")";
+    }
 }

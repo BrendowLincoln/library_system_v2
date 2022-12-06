@@ -21,6 +21,7 @@ public class Book {
         this.id = id;
         this.title = title;
         this.authors = authors;
+        copies.forEach(x -> x.setBook(this));
         this.copies = copies;
     }
 
