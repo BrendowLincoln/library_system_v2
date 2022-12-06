@@ -2,7 +2,7 @@ package br.org.femass.controllers;
 
 import br.org.femass.controllers.components.cards.SmallCardListItemController;
 import br.org.femass.utils.router.Router;
-import br.org.femass.utils.shared.DataProvider;
+import br.org.femass.utils.services.DataProvider;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

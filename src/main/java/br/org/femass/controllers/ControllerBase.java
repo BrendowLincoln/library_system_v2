@@ -3,7 +3,7 @@ package br.org.femass.controllers;
 import br.org.femass.models.Employee;
 import br.org.femass.utils.router.Router;
 import br.org.femass.utils.router.RouterService;
-import br.org.femass.utils.shared.UserProvider;
+import br.org.femass.utils.services.UserProvider;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,7 +13,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Map;
 
 
 public class ControllerBase {

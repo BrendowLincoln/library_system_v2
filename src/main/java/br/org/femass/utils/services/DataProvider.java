@@ -1,4 +1,4 @@
-package br.org.femass.utils.shared;
+package br.org.femass.utils.services;
 
 import java.util.HashMap;
 

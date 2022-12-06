@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="cardContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="card-container" stylesheets="@../../../styles/shared/components/cards/ReaderCardListItemStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.components.cards.ReaderCardListItemController">
+   <children>
+      <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0" spacing="3.0" styleClass="align-card-container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox fillHeight="false" prefHeight="72.0" prefWidth="200.0" styleClass="id-badge">
+               <children>
+                  <Label fx:id="idLabel" styleClass="id-label-badge" text="0" />
+               </children>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="info-container" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="readerNameLabel" styleClass="author-name-label" text="#name">
+                     <VBox.margin>
+                        <Insets bottom="4.0" />
+                     </VBox.margin></Label>
+                  <HBox prefHeight="25.0" prefWidth="539.0">
+                     <children>
+                        <Label fx:id="readerTypeLabel" styleClass="subtitle-label" text="#readerType" />
+                        <Label styleClass="subtitle-label" text="-">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="fieldBasedInReaderTypeLabel" styleClass="subtitle-label" text="#fieldBasedInReaderType" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="71.0" prefHeight="25.0" prefWidth="539.0">
+                     <children>
+                        <Label fx:id="authorNationalityLabel1" styleClass="info-title-label" text="Endereço">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="addressLabel" styleClass="subtitle-label" text="#address" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="85.0" prefHeight="25.0" prefWidth="539.0">
+                     <children>
+                        <Label fx:id="authorNationalityLabel11" styleClass="info-title-label" text="Telefone">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="telephoneLabel" styleClass="subtitle-label" text="#telephone" />
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="registered-books-container">
+               <children>
+                  <Label fx:id="boredBooksCountLabel" styleClass="register-books-count" text="0" />
+                  <Label styleClass="registered-books-label" text="Livros emprestados" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

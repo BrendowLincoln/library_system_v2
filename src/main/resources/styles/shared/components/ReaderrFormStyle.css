@@ -1,0 +1,81 @@
+.form-container {
+    -fx-pref-width: 750px;
+    -fx-pref-height: 600px;
+    -fx-background-color: transparent !important;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 25, 0, 0, 0);
+}
+
+.main-container {
+    -fx-padding: 20px 17px 0 17px;
+    -fx-spacing: 21px;
+    -fx-background-color: #FFFFFF;
+}
+
+.form-label-input-container {
+    -fx-pref-height: 30px;
+    -fx-alignment: center-left;
+}
+
+.form-label-container {
+    -fx-alignment: center-left;
+    -fx-pref-width: 120px;
+}
+
+.form-label {
+    -fx-text-fill: #707070;
+    -fx-font-size: 16px;
+    -fx-font-weight: 400;
+    -fx-font-family: 'Tahome', sans-serif;
+}
+
+.form-input-container {
+    -fx-alignment: center-left;
+}
+
+.form-input {
+    -fx-pref-height: 30px;
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #808EA7;
+    -fx-border-color: rgba(160, 160, 162, 0.8);
+    -fx-border-radius: 5px;
+    -fx-background-position: right center;
+    -fx-font-size: 12px;
+}
+
+.form-code-input {
+    -fx-pref-width: 120px;
+}
+
+.form-name-input,
+.form-second-name-input {
+    -fx-pref-width: 500px;
+}
+
+.form-address-number-input {
+    -fx-pref-width: 90px;
+}
+
+.form-neighborhood-input {
+    -fx-pref-width: 340px;
+}
+
+.form-city-input,
+.form-country-input {
+    -fx-pref-width: 250px;
+}
+
+.form-subject-input {
+    -fx-pref-width: 400px;
+}
+
+
+.radio-select .radio {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #707070;
+    -fx-border-color: rgba(160, 160, 162, 0.8);
+    -fx-border-radius: 20px;
+    -fx-background-position: right center;
+
+}
+

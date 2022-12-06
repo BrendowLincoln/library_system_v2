@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" styleClass="application-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.ReadersPageController">
+   <children>
+      <HBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="side-nav-container" HBox.hgrow="ALWAYS">
+               <children>
+                  <VBox prefHeight="688.0" prefWidth="289.0" styleClass="side-nav-content" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="user-info-container">
+                           <children>
+                              <ImageView fx:id="userAvatar" pickOnBounds="true" preserveRatio="true" styleClass="avatar">
+                                 <image>
+                                    <Image url="@../assets/images/account-avatar.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="61.0" prefWidth="248.0" styleClass="user-info-label-container" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="userNameLabel" styleClass="user-name-label" text="Nome" />
+                                    <Label fx:id="userRoleLabel" styleClass="user-role-label" text="Função" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="26.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
+                           <children>
+                              <Button fx:id="homeButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#homePage" styleClass="side-nav-button" text="Início" HBox.hgrow="ALWAYS" />
+                              <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="side-nav-button-icon">
+                                       <image>
+                                          <Image url="@../assets/images/arrow-gray-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="119.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
+                           <children>
+                              <Button fx:id="booksButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#booksPage" styleClass="side-nav-button" text="Livros" HBox.hgrow="ALWAYS" />
+                              <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="side-nav-button-icon">
+                                       <image>
+                                          <Image url="@../assets/images/arrow-gray-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="169.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
+                           <children>
+                              <Button fx:id="authorsButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#authorsPage" styleClass="side-nav-button" text="Autores" HBox.hgrow="ALWAYS" />
+                              <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="side-nav-button-icon">
+                                       <image>
+                                          <Image url="@../assets/images/arrow-gray-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="219.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
+                           <children>
+                              <Button fx:id="readersButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#readersPage" text="Leitores" HBox.hgrow="ALWAYS">
+                                 <styleClass>
+                                    <String fx:value="side-nav-button" />
+                                    <String fx:value="side-nav-button-selected" />
+                                 </styleClass></Button>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="side-nav-button-icon">
+                                       <image>
+                                          <Image url="@../assets/images/arrow-blue-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="269.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
+                           <children>
+                              <Button fx:id="loansButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#loansPage" styleClass="side-nav-button" text="Empréstimos" HBox.hgrow="ALWAYS" />
+                              <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="side-nav-button-icon">
+                                       <image>
+                                          <Image url="@../assets/images/arrow-gray-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="319.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
+                           <children>
+                              <Button fx:id="employeesButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#employeesPage" styleClass="side-nav-button" text="Funcionários" HBox.hgrow="ALWAYS" />
+                              <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="side-nav-button-icon">
+                                       <image>
+                                          <Image url="@../assets/images/arrow-gray-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_LEFT" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="side-nav-button-container">
+                           <children>
+                              <Button fx:id="logoutButton" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#signInPage" styleClass="side-nav-button" text="Sair" HBox.hgrow="ALWAYS" />
+                              <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="side-nav-button-icon">
+                                       <image>
+                                          <Image url="@../assets/images/logout-gray-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children></VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="main-container" HBox.hgrow="ALWAYS">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" styleClass="main-content" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox prefHeight="83.0" prefWidth="200.0" styleClass="header-section">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <HBox prefHeight="83.0" prefWidth="200.0" styleClass="title-header-container" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label styleClass="title-header" text="Leitores" />
+                                 </children>
+                              </HBox>
+                              <HBox fillHeight="false" prefHeight="83.0" prefWidth="200.0" styleClass="logo-header-container" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="logo-header">
+                                       <image>
+                                          <Image url="@../assets/images/logo-for-pages.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" fillHeight="false" prefHeight="170.0" prefWidth="992.0" styleClass="search-section-container">
+                           <children>
+                              <AnchorPane minHeight="0.0" prefHeight="66.0" prefWidth="850.0" styleClass="search-input-container">
+                                 <children>
+                                    <TextField fx:id="searchInput" layoutX="81.0" layoutY="53.0" onKeyPressed="#searchKeyPressed" prefWidth="0.0" promptText="Busque o leitor que deseja" styleClass="search-input" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma" size="16.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button fx:id="searchButton" layoutX="761.0" mnemonicParsing="false" onMouseClicked="#searchBookClick" prefHeight="0.0" styleClass="search-input-button" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="1.0">
+                                       <graphic>
+                                          <ImageView pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/images/search-light-blue-icon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </AnchorPane>
+                              <Button fx:id="addButton" graphicTextGap="18.0" mnemonicParsing="false" onMouseClicked="#add" styleClass="add-button" text="Adicionar">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/images/add-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="26.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <VBox fillWidth="false" prefHeight="590.0" prefWidth="1018.0" styleClass="list-card-container">
+                           <children>
+                              <ScrollPane fx:id="scrollContainer" pannable="true" prefHeight="503.0" prefWidth="979.0" styleClass="list-card-scroll" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <VBox fx:id="cardList" alignment="CENTER" prefHeight="540.0" prefWidth="969.0" styleClass="list-card">
+                                       <children>
+                                          <Label styleClass="group-empty-message" text="Nenhum leitor encontrado" />
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../styles/shared/GlobalStyle.css" />
+      <URL value="@../styles/ReadersPageStyle.css" />
+   </stylesheets>
+</AnchorPane>

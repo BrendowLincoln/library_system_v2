@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="form-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.org.femass.controllers.components.ReaderFormController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="header-container" stylesheets="@../../styles/shared/DialogStyle.css">
+               <children>
+                  <Label fx:id="headerTitle" styleClass="header-title" text="#Titulo" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fx:id="closeButton" onMouseClicked="#closeDialog" pickOnBounds="true" preserveRatio="true" styleClass="header-close-button">
+                           <image>
+                              <Image url="@../../assets/images/close-white-icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="main-container" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Código" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container">
+                           <children>
+                              <TextField fx:id="codeInput">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-code-input" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="46.0">
+                           <children>
+                              <Label styleClass="form-label" text="Tipo" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" styleClass="form-input-container">
+                           <children>
+                              <RadioButton fx:id="teacherRadio" mnemonicParsing="false" onMouseClicked="#selectTeacherRadio" styleClass="radio-select" text="Professor" />
+                              <RadioButton fx:id="studentRadio" mnemonicParsing="false" onMouseClicked="#selectStudentRadio" styleClass="radio-select" text="Aluno" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="60.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Nome" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="nameInput">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-name-input" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="111.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Rua" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="streetNameInput">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-second-name-input" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="162.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="29.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Nº" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="93.0" styleClass="form-input-container">
+                           <children>
+                              <TextField fx:id="addressNumberInput">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-address-number-input" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="60.0">
+                           <children>
+                              <Label styleClass="form-label" text="Bairro" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="108.0">
+                           <children>
+                              <TextField fx:id="neighborhoodInput" prefWidth="344.0" styleClass="form-input" />
+                           </children>
+                           <styleClass>
+                              <String fx:value="form-input-container" />
+                              <String fx:value="form-neighborhood-input" />
+                           </styleClass>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="213.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="29.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Cidade" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="93.0" styleClass="form-city-input">
+                           <children>
+                              <TextField fx:id="cityInput" prefWidth="251.0" styleClass="form-input" />
+                           </children>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="60.0">
+                           <children>
+                              <Label styleClass="form-label" text="Estado " />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="181.0" styleClass="form-input-container">
+                           <children>
+                              <TextField fx:id="stateInput" prefWidth="344.0" styleClass="form-input" />
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="152.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="País" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="form-input-container" HBox.hgrow="ALWAYS">
+                           <children>
+                              <ComboBox fx:id="countryOption" prefWidth="150.0">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-country-input" />
+                                 </styleClass>
+                              </ComboBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="27.0" layoutY="203.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="29.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Telefone" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="93.0" styleClass="form-input-container">
+                           <children>
+                              <TextField fx:id="areaCodeInput" promptText="DDD">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-address-number-input" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="227.0" styleClass="form-input-container">
+                           <children>
+                              <TextField fx:id="telephoneNumberInput" prefWidth="344.0" promptText="Número" styleClass="form-input" />
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="registerContainer" layoutX="27.0" layoutY="234.0" prefHeight="30.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="29.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Matrícula" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="181.0" styleClass="form-input-container">
+                           <children>
+                              <TextField fx:id="registerInput" prefWidth="344.0" styleClass="form-input" />
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="subjectContainer" layoutX="27.0" layoutY="387.0" prefHeight="30.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="29.0" styleClass="form-label-container">
+                           <children>
+                              <Label styleClass="form-label" text="Disciplina" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="181.0">
+                           <children>
+                              <TextField fx:id="subjectInput" prefWidth="283.0">
+                                 <styleClass>
+                                    <String fx:value="form-input" />
+                                    <String fx:value="form-subject-input" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <styleClass>
+                              <String fx:value="form-input-container" />
+                              <String fx:value="form-subject-input" />
+                           </styleClass>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="bottom-container">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onMouseClicked="#delete" styleClass="delete-button-bottom" text="Excluir" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="cancelButton" mnemonicParsing="false" onMouseClicked="#cancel" styleClass="cancel-button-bottom" text="Cancelar" />
+                  <Button fx:id="saveButton" mnemonicParsing="false" onMouseClicked="#save" styleClass="save-button-bottom" text="Salvar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <opaqueInsets>
+      <Insets top="20.0" />
+   </opaqueInsets>
+   <stylesheets>
+      <URL value="@../../styles/shared/DialogStyle.css" />
+      <URL value="@../../styles/shared/components/ReaderrFormStyle.css" />
+   </stylesheets>
+</AnchorPane>

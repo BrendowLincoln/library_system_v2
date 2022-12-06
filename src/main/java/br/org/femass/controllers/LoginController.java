@@ -4,7 +4,7 @@ import br.org.femass.daos.EmployeeDao;
 import br.org.femass.models.Employee;
 import br.org.femass.utils.router.Router;
 import br.org.femass.utils.router.RouterService;
-import br.org.femass.utils.shared.UserProvider;
+import br.org.femass.utils.services.UserProvider;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
