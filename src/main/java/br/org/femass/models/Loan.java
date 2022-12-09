@@ -12,7 +12,7 @@ public class Loan {
     private LocalDate loanDate;
     private LocalDate expectedReturnDate;
     private LocalDate returnDate;
-    @OneToMany(cascade = CascadeType.MERGE)
+    @ManyToMany(cascade = CascadeType.MERGE)
     private List<Copy> copies;
     @ManyToOne(cascade = CascadeType.MERGE)
     private Reader reader;
